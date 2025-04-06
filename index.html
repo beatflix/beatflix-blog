@@ -50,17 +50,40 @@
       margin: 0px 0 20px;
     }
 
-    /* BARRA DE PESQUISA RESTAURADA */
     .search-container {
       position: absolute;
       top: 30px;
       right: 20px;
-      display: flex;
-      align-items: center;
     }
 
-    .search-container input {
-      width: 0;
+    .search-button {
+      width: 40px;
+      height: 40px;
+      background-color: royalblue;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+
+    .search-button svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .search-input {
+      display: none;
+      margin-top: 10px;
+    }
+
+    .search-container:focus-within .search-input {
+      display: block;
+    }
+
+    .search-input input {
       padding: 8px 12px;
       font-size: 14px;
       border: none;
@@ -68,49 +91,7 @@
       outline: none;
       background-color: royalblue;
       color: white;
-      transition: width 0.4s ease;
-      opacity: 0;
-      pointer-events: none;
-    }
-
-    .search-icon {
-      width: 40px;
-      height: 40px;
-      background-color: royalblue;
-      border-radius: 50%;
-      position: relative;
-      cursor: pointer;
-    }
-
-    .search-icon::before {
-      content: '';
-      display: block;
-      width: 14px;
-      height: 14px;
-      border: 2px solid white;
-      border-radius: 50%;
-      position: absolute;
-      top: 10px;
-      left: 10px;
-    }
-
-    .search-icon::after {
-      content: '';
-      width: 8px;
-      height: 2px;
-      background-color: white;
-      position: absolute;
-      top: 21px;
-      left: 23px;
-      transform: rotate(45deg);
-    }
-
-    .search-container:hover input,
-    .search-container input:focus {
       width: 160px;
-      opacity: 1;
-      pointer-events: all;
-      margin-left: 10px;
     }
 
     nav {
@@ -248,10 +229,17 @@
     </div>
     <p>POR BEATRIZ</p>
 
-    <!-- BARRA DE PESQUISA ATUALIZADA -->
-    <div class="search-container">
-      <input type="text" placeholder="Pesquisar...">
-      <div class="search-icon"></div>
+    <!-- Barra de pesquisa personalizada com SVG -->
+    <div class="search-container" tabindex="0">
+      <button class="search-button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </button>
+      <div class="search-input">
+        <input type="text" placeholder="Pesquisar...">
+      </div>
     </div>
   </header>
 
