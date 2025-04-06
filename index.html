@@ -1,84 +1,85 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Beatflix</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #0e0e0e;
+      font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+      background-color: #0f0f0f;
       color: #ffffff;
     }
 
     header {
       background-color: #000;
-      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      padding: 1.2rem 2rem;
+      border-bottom: 1px solid #222;
     }
 
     header h1 {
       font-size: 1.8rem;
-      color: #8c52ff;
-      letter-spacing: 1px;
+      color: #8e2eff;
     }
 
     nav a {
       color: #fff;
       text-decoration: none;
       margin-left: 1.5rem;
-      font-weight: 500;
       font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #8e2eff;
     }
 
     .hero {
-      background: linear-gradient(135deg, #1a1a2e, #16213e);
-      padding: 4rem 2rem;
+      background: linear-gradient(to bottom, #1f1f1f, #0f0f0f);
       text-align: center;
+      padding: 5rem 2rem 4rem;
     }
 
     .hero h2 {
-      font-size: 2.5rem;
-      color: #8c52ff;
+      font-size: 3rem;
+      color: #ffffff;
       margin-bottom: 1rem;
     }
 
     .hero p {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
+      color: #ccc;
       max-width: 600px;
       margin: 0 auto;
-      color: #ccc;
     }
 
     .section {
-      padding: 2rem;
+      padding: 3rem 2rem;
     }
 
     .section h3 {
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-      color: #00bfff;
-      border-left: 4px solid #8c52ff;
-      padding-left: 0.5rem;
+      font-size: 1.5rem;
+      color: #8e2eff;
+      margin-bottom: 2rem;
+      border-left: 4px solid #8e2eff;
+      padding-left: 1rem;
     }
 
-    .cards {
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
     }
 
     .card {
-      background-color: #1e1e2f;
-      border-radius: 12px;
+      background-color: #1a1a1a;
+      border-radius: 10px;
       overflow: hidden;
-      transition: 0.3s ease;
+      transition: transform 0.3s ease;
     }
 
     .card:hover {
@@ -87,7 +88,7 @@
 
     .card img {
       width: 100%;
-      height: 180px;
+      height: 200px;
       object-fit: cover;
     }
 
@@ -96,23 +97,22 @@
     }
 
     .card-content h4 {
-      color: #ffffff;
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
+      margin: 0 0 0.5rem;
+      color: #fff;
     }
 
     .card-content p {
-      color: #ccc;
+      color: #bbb;
       font-size: 0.95rem;
     }
 
     footer {
+      background-color: #111;
       text-align: center;
-      background-color: #141414;
-      color: #aaa;
       padding: 2rem 1rem;
-      font-size: 0.9rem;
-      margin-top: 2rem;
+      color: #666;
+      font-size: 0.85rem;
+      margin-top: 4rem;
     }
   </style>
 </head>
@@ -130,72 +130,52 @@
   </header>
 
   <section class="hero">
-    <h2>Descubra. Curta. Compartilhe.</h2>
-    <p>Resenhas, playlists e curiosidades sobre tudo que inspira. Um blog pessoal com cara de maratona.</p>
+    <h2>Entre no universo Beatflix</h2>
+    <p>Um espaço para curiosidades, resenhas e playlists com um toque criativo e apaixonado por cultura pop.</p>
   </section>
 
   <section class="section">
-    <h3>Resenhas em Destaque</h3>
-    <div class="cards">
+    <h3>Destaques da Semana</h3>
+    <div class="grid">
       <div class="card">
-        <img src="https://via.placeholder.com/400x200" alt="Resenha 1">
+        <img src="https://via.placeholder.com/600x300" alt="Capa de artigo">
         <div class="card-content">
-          <h4>O drama que você não esperava amar</h4>
-          <p>Uma série simples, mas com um roteiro que prende e emociona.</p>
+          <h4>3 séries que redefiniram o sci-fi moderno</h4>
+          <p>O gênero renasceu com tramas que equilibram emoção, filosofia e tecnologia.</p>
         </div>
       </div>
       <div class="card">
-        <img src="https://via.placeholder.com/400x200" alt="Resenha 2">
+        <img src="https://via.placeholder.com/600x300" alt="Playlist destaque">
         <div class="card-content">
-          <h4>Comédia com alma: risadas e reflexões</h4>
-          <p>Mais do que humor, essa série entrega mensagens tocantes.</p>
+          <h4>Playlist: para sentir como se estivesse no episódio</h4>
+          <p>Sons que traduzem cenas. Perfeita pra maratonar com fones de ouvido.</p>
         </div>
       </div>
     </div>
   </section>
 
   <section class="section">
-    <h3>Curiosidades do mundo pop</h3>
-    <div class="cards">
+    <h3>Curiosidades Pop</h3>
+    <div class="grid">
       <div class="card">
-        <img src="https://via.placeholder.com/400x200" alt="Curiosidade 1">
+        <img src="https://via.placeholder.com/600x300" alt="Curiosidade 1">
         <div class="card-content">
-          <h4>Por que o streaming ama o formato de 8 episódios?</h4>
-          <p>Entenda o impacto do binge watching na produção de conteúdo.</p>
+          <h4>O easter egg escondido em Stranger Things</h4>
+          <p>Um detalhe que conecta as temporadas e poucos notaram.</p>
         </div>
       </div>
       <div class="card">
-        <img src="https://via.placeholder.com/400x200" alt="Curiosidade 2">
+        <img src="https://via.placeholder.com/600x300" alt="Curiosidade 2">
         <div class="card-content">
-          <h4>Segredos escondidos nos episódios de Black Mirror</h4>
-          <p>Você viu todas as referências cruzadas entre os episódios?</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <h3>Playlists pra entrar no clima</h3>
-    <div class="cards">
-      <div class="card">
-        <img src="https://via.placeholder.com/400x200" alt="Playlist 1">
-        <div class="card-content">
-          <h4>Indie vibes & maratona</h4>
-          <p>Perfeita pra acompanhar aquela série que toca o coração.</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://via.placeholder.com/400x200" alt="Playlist 2">
-        <div class="card-content">
-          <h4>Beats & spoilers</h4>
-          <p>Trilhas com personalidade, como suas histórias favoritas.</p>
+          <h4>Roteiristas ou videntes?</h4>
+          <p>Previsões que as séries fizeram... e viraram realidade.</p>
         </div>
       </div>
     </div>
   </section>
 
   <footer>
-    © 2025 Beatflix. Um blog feito com criatividade, playlists e referências de séries. 🎬🎧
+    © 2025 Beatflix • Feito por Beatriz com criatividade, playlists e muitas referências. 🎬
   </footer>
 
 </body>
