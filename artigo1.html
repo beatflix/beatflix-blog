@@ -18,18 +18,76 @@
       color: white;
       text-align: center;
       padding: 30px 10px 10px;
+      position: relative;
+    }
+
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
     }
 
     .logo-container h1 {
       font-family: 'Archivo Black', sans-serif;
-      font-size: 50px;
+      font-size: 60px;
       margin: 0;
     }
 
     header p {
       font-family: 'Archivo Black', sans-serif;
       font-size: 16px;
+      letter-spacing: 1px;
       margin: 0px 0 20px;
+    }
+
+    .search-container {
+      position: absolute;
+      top: 30px;
+      right: 20px;
+    }
+
+    .search-button {
+      width: 40px;
+      height: 40px;
+      background-color: royalblue;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+
+    .search-button svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .search-input {
+      display: none;
+      margin-top: 10px;
+    }
+
+    .search-container:focus-within .search-input {
+      display: block;
+    }
+
+    .search-input input {
+      padding: 8px 12px;
+      font-size: 14px;
+      border: none;
+      border-radius: 20px;
+      outline: none;
+      background-color: royalblue;
+      color: white;
+      width: 160px;
+    }
+
+    .search-input input::placeholder {
+      color: white;
+      opacity: 1;
     }
 
     nav {
@@ -53,27 +111,32 @@
       color: #111111;
     }
 
-    .content-article {
+    .artigo {
       max-width: 800px;
       margin: 40px auto;
       padding: 0 20px;
     }
 
-    .content-article h2 {
-      font-family: 'Open Sans Black', sans-serif;
+    .artigo h2 {
+      font-family: 'Archivo Black', sans-serif;
       font-size: 28px;
-      color: royalblue;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
+      color: #111;
     }
 
-    .content-article img {
+    .artigo .meta {
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 30px;
+    }
+
+    .artigo img {
       width: 100%;
-      height: auto;
-      margin-bottom: 20px;
       border-radius: 5px;
+      margin-bottom: 30px;
     }
 
-    .content-article p {
+    .artigo p {
       font-size: 16px;
       line-height: 1.6;
       margin-bottom: 20px;
@@ -96,6 +159,18 @@
       <h1>BEATFLIX</h1>
     </div>
     <p>POR BEATRIZ</p>
+
+    <div class="search-container" tabindex="0">
+      <button class="search-button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </button>
+      <div class="search-input">
+        <input type="text" placeholder="Pesquisar...">
+      </div>
+    </div>
   </header>
 
   <nav>
@@ -106,17 +181,14 @@
     <a href="#">PLAYLISTS</a>
   </nav>
 
-  <div class="content-article">
+  <main class="artigo">
     <h2>Série X é tudo isso mesmo?</h2>
-    <img src="https://source.unsplash.com/featured/?series,movie" alt="Capa da série X">
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac orci fermentum, malesuada nulla nec, viverra nulla. 
-      Curabitur vitae laoreet enim. Integer semper, erat nec mattis fermentum, turpis sem commodo nisl, sed congue libero risus nec leo.
-    </p>
-    <p>
-      Mais parágrafos, curiosidades, análises ou até gifs podem ir aqui. Você pode deixar a leitura leve e divertida — bem estilo Beatflix 💙.
-    </p>
-  </div>
+    <p class="meta">Publicado em 6 de abril de 2025</p>
+    <img src="https://source.unsplash.com/featured/?series" alt="Imagem da série X">
+    <p>A série X chegou com tudo nas plataformas de streaming e rapidamente virou febre. Mas será que ela entrega mesmo tudo o que promete?</p>
+    <p>Com um elenco de peso e uma direção ousada, a produção traz temas atuais e uma narrativa que mistura ficção científica com drama psicológico. Ainda assim, alguns críticos apontam falhas no roteiro e excesso de reviravoltas forçadas.</p>
+    <p>Neste artigo, exploramos o que fez da série um sucesso e o que pode ter deixado a desejar. Vem com a gente!</p>
+  </main>
 
   <footer>
     <p>&copy; 2025 Beatflix. Um blog feito à base de café e música. 💙</p>
