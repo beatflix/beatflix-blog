@@ -1,212 +1,249 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>BEATFLIX</title>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Open+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Beatflix</title>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Open+Sans:wght@400;700;800&display=swap" rel="stylesheet"/>
   <style>
     body {
       margin: 0;
       font-family: 'Open Sans', sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
+      background-color: #f8f8f8;
+      color: #1a1a1a;
     }
 
-    /* Cabeçalho */
     header {
-      background-color: #111111; /* Preto suave */
-      color: white;
+      background-color: #1c1c1c;
       text-align: center;
-      padding: 30px 10px 10px;
+      padding: 40px 20px 20px;
+      color: white;
     }
 
-    header h1 {
+    h1 {
       font-family: 'Archivo Black', sans-serif;
-      font-size: 60px;
+      font-size: 72px;
       margin: 0;
+      letter-spacing: 2px;
     }
 
-    header p {
+    .byline {
       font-family: 'Archivo Black', sans-serif;
-      font-size: 14px;
+      font-size: 18px;
+      margin-top: 4px;
       letter-spacing: 1px;
-      margin: 5px 0 20px;
     }
 
-    /* Menu */
     nav {
-      background-color: #111111;
+      background-color: #1c1c1c;
       display: flex;
       justify-content: center;
+      gap: 30px;
+      padding: 10px 0;
       border-bottom: 1px solid white;
     }
 
     nav a {
+      text-decoration: none;
       color: white;
       font-family: 'Archivo Black', sans-serif;
-      text-decoration: none;
-      padding: 15px 20px;
       font-size: 14px;
-      transition: background 0.3s;
+      position: relative;
     }
 
     nav a:hover {
-      background-color: #d3d3d3; /* Cinza claro */
-      color: #111111;
+      color: #ccc;
     }
 
-    /* Destaque inicial */
+    .submenu {
+      position: absolute;
+      background-color: #1c1c1c;
+      display: none;
+      flex-direction: column;
+      top: 30px;
+      padding: 10px 0;
+      z-index: 10;
+    }
+
+    .has-submenu:hover .submenu {
+      display: flex;
+    }
+
     .hero {
-      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                  url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      position: relative;
+      height: 300px;
+      background-image: url('https://i.imgur.com/DXqTqjz.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-text {
+      position: relative;
       color: white;
       text-align: center;
-      padding: 100px 20px;
+      font-size: 20px;
+      padding: 0 20px;
     }
 
-    .hero h2 {
-      font-family: 'Archivo Black', sans-serif;
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      max-width: 600px;
-      margin: 0 auto;
-      font-size: 16px;
-    }
-
-    /* Seções */
     section {
-      padding: 40px 20px;
-      max-width: 1200px;
-      margin: auto;
+      padding: 30px 20px;
     }
 
-    section h3 {
+    h2 {
       font-family: 'Archivo Black', sans-serif;
-      font-size: 22px;
-      border-bottom: 3px solid royalblue;
-      padding-bottom: 5px;
-      margin-bottom: 20px;
-      color: #111;
+      font-size: 20px;
+      margin-bottom: 15px;
+      color: #0033cc;
     }
 
     .cards {
       display: flex;
-      flex-wrap: wrap;
       gap: 20px;
+      flex-wrap: wrap;
     }
 
     .card {
       background-color: white;
-      border-radius: 5px;
-      overflow: hidden;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      flex: 1 1 calc(33.33% - 20px);
-      min-width: 250px;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
     }
 
     .card img {
       width: 100%;
-      height: 160px;
-      object-fit: cover;
+      border-radius: 4px;
     }
 
-    .card .content {
-      padding: 15px;
-    }
-
-    .card h4 {
+    .card-title {
       font-family: 'Open Sans Black', sans-serif;
       font-size: 16px;
-      margin: 0 0 10px;
-      color: royalblue;
+      margin: 10px 0 5px;
     }
 
-    .card p {
+    .card-text {
       font-size: 14px;
       color: #444;
     }
 
-    /* Responsivo */
-    @media (max-width: 768px) {
-      nav {
-        flex-wrap: wrap;
-      }
-      .cards {
-        flex-direction: column;
-      }
+    footer {
+      background-color: #1c1c1c;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
-
   <header>
     <h1>BEATFLIX</h1>
-    <p>BY BEATRIZ</p>
+    <div class="byline">BY BEATRIZ</div>
   </header>
 
   <nav>
     <a href="#">HOME</a>
-    <a href="#">CURIOSIDADES</a>
-    <a href="#">RESENHAS</a>
+    <a href="#">SOBRE</a>
+    <div class="has-submenu">
+      <a href="#">ARTIGOS</a>
+      <div class="submenu">
+        <a href="#">CURIOSIDADES</a>
+        <a href="#">RESENHAS</a>
+      </div>
+    </div>
     <a href="#">VÍDEOS</a>
     <a href="#">PLAYLISTS</a>
   </nav>
 
   <div class="hero">
-    <h2>Entre no universo Beatflix</h2>
-    <p>Um espaço para curiosidades, resenhas e playlists com um toque criativo e apaixonado por cultura pop.</p>
+    <div class="hero-text">
+      <h2>Entre no universo Beatflix</h2>
+      <p>Um espaço para curiosidades, resenhas e playlists com um toque criativo e apaixonado por cultura pop.</p>
+    </div>
   </div>
 
   <section>
-    <h3>DESTAQUES DA SEMANA</h3>
+    <h2>DESTAQUES DA SEMANA</h2>
     <div class="cards">
       <div class="card">
-        <img src="https://source.unsplash.com/featured/?film" alt="Destaque 1">
-        <div class="content">
-          <h4>Título do Artigo 1</h4>
-          <p>Um breve resumo do artigo que chama atenção e convida o leitor a continuar lendo.</p>
-        </div>
+        <img src="https://via.placeholder.com/300x160" alt="">
+        <div class="card-title">Título do Destaque</div>
+        <div class="card-text">Texto breve sobre o destaque apresentado aqui.</div>
       </div>
       <div class="card">
-        <img src="https://source.unsplash.com/featured/?cinema" alt="Destaque 2">
-        <div class="content">
-          <h4>Título do Artigo 2</h4>
-          <p>Outro texto curto que ajuda a resumir o conteúdo da postagem ou resenha destacada.</p>
-        </div>
+        <img src="https://via.placeholder.com/300x160" alt="">
+        <div class="card-title">Outro Destaque</div>
+        <div class="card-text">Descrição de outro conteúdo em destaque na semana.</div>
       </div>
       <div class="card">
-        <img src="https://source.unsplash.com/featured/?music" alt="Destaque 3">
-        <div class="content">
-          <h4>Título do Artigo 3</h4>
-          <p>Apresentação rápida para uma playlist ou novidade dentro da plataforma Beatflix.</p>
-        </div>
+        <img src="https://via.placeholder.com/300x160" alt="">
+        <div class="card-title">Mais um Destaque</div>
+        <div class="card-text">Resumo de uma terceira notícia ou curiosidade.</div>
       </div>
     </div>
   </section>
 
   <section>
-    <h3>CURIOSIDADES POP</h3>
+    <h2>ARTIGOS</h2>
     <div class="cards">
-      <!-- Mais três cards -->
+      <div class="card">
+        <img src="https://via.placeholder.com/300x160" alt="">
+        <div class="card-title">Curiosidade Legal</div>
+        <div class="card-text">Fatos curiosos e interessantes sobre cultura pop.</div>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x160" alt="">
+        <div class="card-title">Resenha Impactante</div>
+        <div class="card-text">Um olhar criativo e afiado sobre uma produção recente.</div>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x160" alt="">
+        <div class="card-title">Análise Profunda</div>
+        <div class="card-text">Explorando os bastidores e significados ocultos.</div>
+      </div>
     </div>
   </section>
 
   <section>
-    <h3>VÍDEOS</h3>
+    <h2>VÍDEOS</h2>
     <div class="cards">
-      <!-- Cards de vídeo -->
+      <div class="card">
+        <img src="https://via.placeholder.com/300x160" alt="">
+        <div class="card-title">Vídeo Destaque</div>
+        <div class="card-text">Dicas em vídeo, trailers ou entrevistas especiais.</div>
+      </div>
     </div>
   </section>
 
   <section>
-    <h3>PLAYLISTS</h3>
+    <h2>PLAYLISTS</h2>
     <div class="cards">
-      <!-- Cards de playlist -->
+      <div class="card">
+        <img src="https://via.placeholder.com/300x160" alt="">
+        <div class="card-title">Trilha Sonora Perfeita</div>
+        <div class="card-text">Músicas inspiradas em filmes, séries e vibes criativas.</div>
+      </div>
     </div>
   </section>
 
+  <footer>
+    © 2025 Beatflix | Feito com ❤️ por Beatriz
+  </footer>
 </body>
 </html>
