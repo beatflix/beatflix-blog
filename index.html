@@ -1,246 +1,212 @@
-
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Beatflix</title>
+  <meta charset="UTF-8">
+  <title>BEATFLIX</title>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Open+Sans:wght@400;700;800&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Open Sans', sans-serif;
-      background-color: #f8f8f8;
-      color: #1a1a1a;
+      background-color: #f9f9f9;
+      color: #333;
     }
 
+    /* Cabeçalho */
     header {
-      background-color: #111;
+      background-color: #111111; /* Preto suave */
+      color: white;
       text-align: center;
-      padding: 1.5rem 1rem 1rem;
-      border-bottom: 2px solid #ffffff;
+      padding: 30px 10px 10px;
     }
 
     header h1 {
-      font-size: 3.5rem;
       font-family: 'Archivo Black', sans-serif;
-      text-transform: uppercase;
-      margin: 0;
-      padding: 0;
-      font-family: 'Archivo Black', sans-serif;
-      font-size: 3rem;
-      color: #0050ff;
+      font-size: 60px;
       margin: 0;
     }
 
     header p {
       font-family: 'Archivo Black', sans-serif;
-      font-size: 0.9rem;
-      color: #ccc;
-      margin-top: 0.2rem;
-      text-transform: uppercase;
+      font-size: 14px;
       letter-spacing: 1px;
+      margin: 5px 0 20px;
     }
 
+    /* Menu */
     nav {
-      margin-top: 1rem;
+      background-color: #111111;
+      display: flex;
+      justify-content: center;
+      border-bottom: 1px solid white;
     }
 
     nav a {
+      color: white;
       font-family: 'Archivo Black', sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: #fff;
       text-decoration: none;
-      margin: 0 1rem;
-      font-size: 1rem;
-      transition: color 0.3s ease;
+      padding: 15px 20px;
+      font-size: 14px;
+      transition: background 0.3s;
     }
 
     nav a:hover {
-      color: #0050ff;
+      background-color: #d3d3d3; /* Cinza claro */
+      color: #111111;
     }
 
+    /* Destaque inicial */
     .hero {
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(17, 17, 17, 0.9)), url('https://via.placeholder.com/1200x600') center/cover no-repeat;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                  url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      color: white;
       text-align: center;
-      padding: 5rem 2rem 4rem;
-      color: #fff;
+      padding: 100px 20px;
     }
 
     .hero h2 {
       font-family: 'Archivo Black', sans-serif;
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
+      font-size: 32px;
+      margin-bottom: 10px;
     }
 
     .hero p {
-      font-size: 1.2rem;
       max-width: 600px;
       margin: 0 auto;
-      color: #ddd;
+      font-size: 16px;
     }
 
-    .section {
-      padding: 3rem 2rem;
+    /* Seções */
+    section {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
     }
 
-    .section h3 {
+    section h3 {
       font-family: 'Archivo Black', sans-serif;
-      font-size: 1.5rem;
-      color: #0050ff;
-      margin-bottom: 2rem;
-      border-left: 4px solid #0050ff;
-      padding-left: 1rem;
+      font-size: 22px;
+      border-bottom: 3px solid royalblue;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+      color: #111;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
     }
 
     .card {
-      background-color: #fff;
-      border-radius: 10px;
+      background-color: white;
+      border-radius: 5px;
       overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-      transform: scale(1.02);
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      flex: 1 1 calc(33.33% - 20px);
+      min-width: 250px;
     }
 
     .card img {
       width: 100%;
-      height: 200px;
+      height: 160px;
       object-fit: cover;
     }
 
-    .card-content {
-      padding: 1rem;
+    .card .content {
+      padding: 15px;
     }
 
-    .card-content h4 {
+    .card h4 {
       font-family: 'Open Sans Black', sans-serif;
-      margin: 0 0 0.5rem;
-      font-weight: 800;
+      font-size: 16px;
+      margin: 0 0 10px;
+      color: royalblue;
     }
 
-    .card-content p {
-      color: #555;
-      font-size: 0.95rem;
+    .card p {
+      font-size: 14px;
+      color: #444;
     }
 
-    footer {
-      background-color: #111;
-      text-align: center;
-      padding: 2rem 1rem;
-      color: #888;
-      font-size: 0.85rem;
-      margin-top: 4rem;
+    /* Responsivo */
+    @media (max-width: 768px) {
+      nav {
+        flex-wrap: wrap;
+      }
+      .cards {
+        flex-direction: column;
+      }
     }
-  .subtitle {
-      font-family: 'Archivo Black', sans-serif;
-      font-size: 1rem;
-      letter-spacing: 2px;
-      color: #fff;
-      margin-top: -0.5rem;
-    }
-</style>
+  </style>
 </head>
 <body>
 
   <header>
-    <div style="text-align: center;">
-      <h1>BEATFLIX</h1>
-      <h2 class="subtitle">BY BEATRIZ</h2>
-    </div>
+    <h1>BEATFLIX</h1>
     <p>BY BEATRIZ</p>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="blog.html">Blog</a>
-      <a href="videos.html">Vídeos</a>
-      <a href="playlists.html">Playlists</a>
-      <a href="sobre.html">Sobre</a>
-    </nav>
   </header>
 
-  <section class="hero">
+  <nav>
+    <a href="#">HOME</a>
+    <a href="#">CURIOSIDADES</a>
+    <a href="#">RESENHAS</a>
+    <a href="#">VÍDEOS</a>
+    <a href="#">PLAYLISTS</a>
+  </nav>
+
+  <div class="hero">
     <h2>Entre no universo Beatflix</h2>
     <p>Um espaço para curiosidades, resenhas e playlists com um toque criativo e apaixonado por cultura pop.</p>
-  </section>
+  </div>
 
-  <section class="section">
-    <h3>Destaques da Semana</h3>
-    <div class="grid">
+  <section>
+    <h3>DESTAQUES DA SEMANA</h3>
+    <div class="cards">
       <div class="card">
-        <img src="https://via.placeholder.com/600x300" alt="Capa de artigo">
-        <div class="card-content">
-          <h4>3 séries que redefiniram o sci-fi moderno</h4>
-          <p>O gênero renasceu com tramas que equilibram emoção, filosofia e tecnologia.</p>
+        <img src="https://source.unsplash.com/featured/?film" alt="Destaque 1">
+        <div class="content">
+          <h4>Título do Artigo 1</h4>
+          <p>Um breve resumo do artigo que chama atenção e convida o leitor a continuar lendo.</p>
         </div>
       </div>
       <div class="card">
-        <img src="https://via.placeholder.com/600x300" alt="Playlist destaque">
-        <div class="card-content">
-          <h4>Playlist: para sentir como se estivesse no episódio</h4>
-          <p>Sons que traduzem cenas. Perfeita pra maratonar com fones de ouvido.</p>
+        <img src="https://source.unsplash.com/featured/?cinema" alt="Destaque 2">
+        <div class="content">
+          <h4>Título do Artigo 2</h4>
+          <p>Outro texto curto que ajuda a resumir o conteúdo da postagem ou resenha destacada.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/featured/?music" alt="Destaque 3">
+        <div class="content">
+          <h4>Título do Artigo 3</h4>
+          <p>Apresentação rápida para uma playlist ou novidade dentro da plataforma Beatflix.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <h3>Curiosidades Pop</h3>
-    <div class="grid">
-      <div class="card">
-        <img src="https://via.placeholder.com/600x300" alt="Curiosidade 1">
-        <div class="card-content">
-          <h4>O easter egg escondido em Stranger Things</h4>
-          <p>Um detalhe que conecta as temporadas e poucos notaram.</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://via.placeholder.com/600x300" alt="Curiosidade 2">
-        <div class="card-content">
-          <h4>Roteiristas ou videntes?</h4>
-          <p>Previsões que as séries fizeram... e viraram realidade.</p>
-        </div>
-      </div>
+  <section>
+    <h3>CURIOSIDADES POP</h3>
+    <div class="cards">
+      <!-- Mais três cards -->
     </div>
   </section>
 
-  <section class="section">
-    <h3>Vídeos</h3>
-    <div class="grid">
-      <div class="card">
-        <img src="https://via.placeholder.com/600x300" alt="Vídeo 1">
-        <div class="card-content">
-          <h4>Top 5 trailers mais assistidos de 2024</h4>
-          <p>Um recap das maiores emoções dos lançamentos que vêm por aí.</p>
-        </div>
-      </div>
+  <section>
+    <h3>VÍDEOS</h3>
+    <div class="cards">
+      <!-- Cards de vídeo -->
     </div>
   </section>
 
-  <section class="section">
-    <h3>Playlists</h3>
-    <div class="grid">
-      <div class="card">
-        <img src="https://via.placeholder.com/600x300" alt="Playlist 1">
-        <div class="card-content">
-          <h4>Sons que te colocam dentro da série</h4>
-          <p>As músicas perfeitas para cada plot twist.</p>
-        </div>
-      </div>
+  <section>
+    <h3>PLAYLISTS</h3>
+    <div class="cards">
+      <!-- Cards de playlist -->
     </div>
   </section>
-
-  <footer>
-    © 2025 Beatflix • Feito por Beatriz com criatividade, playlists e muitas referências. 🎬
-  </footer>
 
 </body>
 </html>
