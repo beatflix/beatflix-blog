@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SFSQRTN33K"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-SFSQRTN33K');
-</script>
   <meta charset="UTF-8">
   <title>BEATFLIX - Blog</title>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Open+Sans:wght@400;700;800&display=swap" rel="stylesheet">
@@ -23,10 +14,11 @@
 
     /* Cabeçalho */
     header {
-      background-color: #111111; /* Preto suave */
+      background-color: #111111;
       color: white;
       text-align: center;
       padding: 30px 10px 10px;
+      position: relative;
     }
 
     header h1 {
@@ -40,6 +32,32 @@
       font-size: 16px;
       letter-spacing: 1px;
       margin: 0px 0 20px;
+    }
+
+    .search-container {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    .search-container input {
+      padding: 6px 30px 6px 10px;
+      border-radius: 20px;
+      border: none;
+      outline: none;
+      font-size: 14px;
+    }
+
+    .search-container button {
+      position: absolute;
+      right: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #555;
+      font-size: 16px;
     }
 
     /* Menu */
@@ -60,7 +78,7 @@
     }
 
     nav a:hover {
-      background-color: #d3d3d3; /* Cinza claro */
+      background-color: #d3d3d3;
       color: #111111;
     }
 
@@ -71,9 +89,10 @@
       color: white;
       text-align: center;
       padding: 120px 20px;
+      position: relative;
     }
 
-    .hero h2 {
+    .hero h3 {
       font-family: 'Archivo Black', sans-serif;
       font-size: 32px;
       margin-bottom: 10px;
@@ -83,6 +102,23 @@
       max-width: 600px;
       margin: 0 auto;
       font-size: 16px;
+    }
+
+    .scroll-down {
+      font-size: 32px;
+      color: white;
+      text-align: center;
+      margin-top: 30px;
+      animation: bounce 1.5s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(10px);
+      }
     }
 
     /* Seções */
@@ -169,6 +205,10 @@
   <header>
     <h1>BEATFLIX</h1>
     <p>POR BEATRIZ</p>
+    <div class="search-container">
+      <input type="text" placeholder="Buscar...">
+      <button type="submit">&#128269;</button>
+    </div>
   </header>
 
   <nav>
@@ -182,6 +222,7 @@
   <div class="hero">
     <h3>Universo guiado pelo algoritmo das vozes da minha cabeça</h3>
     <p>Curiosidades, playlists e surtos controlados com pitadas de paixão, julgamentos e referências que ninguém pediu.</p>
+    <div class="scroll-down">&#x25BC;</div>
   </div>
 
   <section>
