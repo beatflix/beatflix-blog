@@ -1,30 +1,43 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SFSQRTN33K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SFSQRTN33K');
+  </script>
+
   <meta charset="UTF-8">
   <title>BEATFLIX - Blog</title>
+  <link rel="icon" type="image/png" href="images/beatflix-logo.png">
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Open+Sans:wght@400;700;800&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
       font-family: 'Open Sans', sans-serif;
-      background-color: #f4f4f4;
+      background-color: #f9f9f9;
       color: #333;
     }
 
     header {
-      background-color: #111;
+      background-color: #111111;
       color: white;
       text-align: center;
       padding: 30px 10px 10px;
       position: relative;
     }
 
-    header h1 {
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo-container h1 {
       font-family: 'Archivo Black', sans-serif;
       font-size: 60px;
       margin: 0;
@@ -37,64 +50,11 @@
       margin: 0px 0 20px;
     }
 
-    .search-container {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      display: flex;
-      align-items: center;
-      z-index: 10;
-    }
-
-    .search-container input[type="text"] {
-      width: 0;
-      opacity: 0;
-      padding: 8px 12px;
-      border: none;
-      border-radius: 20px;
-      background-color: royalblue;
-      transition: width 0.4s ease, opacity 0.4s ease;
-      font-size: 14px;
-      color: white;
-    }
-
-    .search-container input[type="text"]::placeholder {
-      color: #f0f0f0;
-    }
-
-    .search-toggle {
-      display: none;
-    }
-
-    .search-container label {
-      display: inline-block;
-      width: 40px;
-      height: 40px;
-      background-color: royalblue;
-      border-radius: 50%;
-      text-align: center;
-      cursor: pointer;
-    }
-
-    .search-container label svg {
-      width: 20px;
-      height: 20px;
-      margin-top: 10px;
-      fill: white;
-    }
-
-    .search-toggle:checked ~ input[type="text"] {
-      width: 160px;
-      opacity: 1;
-      margin-left: 10px;
-    }
-
     nav {
-      background-color: #111;
+      background-color: #111111;
       display: flex;
       justify-content: center;
       border-bottom: 1px solid white;
-      flex-wrap: wrap;
     }
 
     nav a {
@@ -108,7 +68,7 @@
 
     nav a:hover {
       background-color: #d3d3d3;
-      color: #111;
+      color: #111111;
     }
 
     .hero {
@@ -116,12 +76,12 @@
                   url('images/beatflix-universo.png') no-repeat center center/cover;
       color: white;
       text-align: center;
-      padding: 110px 20px;
+      padding: 120px 20px;
     }
 
     .hero h3 {
       font-family: 'Archivo Black', sans-serif;
-      font-size: 16px;
+      font-size: 32px;
       margin-bottom: 10px;
     }
 
@@ -129,23 +89,6 @@
       max-width: 600px;
       margin: 0 auto;
       font-size: 16px;
-    }
-
-    .scroll-down {
-      font-size: 32px;
-      color: white;
-      text-align: center;
-      margin-top: 30px;
-      animation: bounce 1.5s infinite;
-    }
-
-    @keyframes bounce {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(10px);
-      }
     }
 
     section {
@@ -174,7 +117,7 @@
       border-radius: 5px;
       overflow: hidden;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      flex: 1 1 calc(25% - 20px);
+      flex: 1 1 calc(33.33% - 20px);
       min-width: 250px;
       transition: transform 0.3s ease;
     }
@@ -206,7 +149,7 @@
     }
 
     footer {
-      background-color: #111;
+      background-color: #111111;
       color: white;
       text-align: center;
       padding: 20px 10px;
@@ -215,17 +158,11 @@
     }
 
     @media (max-width: 768px) {
+      nav {
+        flex-wrap: wrap;
+      }
       .cards {
         flex-direction: column;
-      }
-
-      .search-container {
-        top: 10px;
-        right: 10px;
-      }
-
-      .search-toggle:checked ~ input[type="text"] {
-        width: 100px;
       }
     }
   </style>
@@ -233,24 +170,16 @@
 <body>
 
   <header>
-    <h1>BEATFLIX</h1>
-    <p>POR BEATRIZ</p>
-
-    <div class="search-container">
-      <input type="checkbox" id="search-toggle" class="search-toggle">
-      <label for="search-toggle">
-        <svg viewBox="0 0 24 24">
-          <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 5L20.49 19l-5-5zm-6 0C8.01 14 6 11.99 6 9.5S8.01 5 10.5 5 15 7.01 15 9.5 12.99 14 10.5 14z"/>
-        </svg>
-      </label>
-      <input type="text" placeholder="Buscar...">
+    <div class="logo-container">
+      <h1>BEATFLIX</h1>
     </div>
+    <p>POR BEATRIZ</p>
   </header>
 
   <nav>
     <a href="#">HOME</a>
     <a href="#">SOBRE</a>
-    <a href="#">BLOG</a>
+    <a href="#">ARTIGOS</a>
     <a href="#">VÍDEOS</a>
     <a href="#">PLAYLISTS</a>
   </nav>
@@ -258,71 +187,118 @@
   <div class="hero">
     <h3>Universo guiado pelo algoritmo das vozes da minha cabeça</h3>
     <p>Curiosidades, playlists e surtos controlados com pitadas de paixão, julgamentos e referências que ninguém pediu.</p>
-    <div class="scroll-down">&#x25BC;</div>
   </div>
 
-  <!-- Seções com cards -->
   <section>
-    <h3>Destaques da Semana</h3>
+    <h3>DESTAQUES DA SEMANA</h3>
     <div class="cards">
       <div class="card">
-        <img src="https://via.placeholder.com/300x160?text=Artigo+1" alt="Destaque 1">
+        <img src="https://source.unsplash.com/featured/?film" alt="Destaque 1">
         <div class="content">
-          <h4>Top 5 momentos de surto</h4>
-          <p>Uma seleção dos surtos mais icônicos e divertidos da semana.</p>
+          <h4>Título do Artigo 1</h4>
+          <p>Um breve resumo do artigo que chama atenção e convida o leitor a continuar lendo.</p>
         </div>
       </div>
       <div class="card">
-        <img src="https://via.placeholder.com/300x160?text=Artigo+2" alt="Destaque 2">
+        <img src="https://source.unsplash.com/featured/?cinema" alt="Destaque 2">
         <div class="content">
-          <h4>Playlist de universos paralelos</h4>
-          <p>Sons que combinam com realidades alternativas da sua mente criativa.</p>
+          <h4>Título do Artigo 2</h4>
+          <p>Outro texto curto que ajuda a resumir o conteúdo da postagem ou resenha destacada.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section>
-    <h3>Textão do bem</h3>
-    <div class="cards">
       <div class="card">
-        <img src="https://via.placeholder.com/300x160?text=Curiosidade+1" alt="Curiosidade">
+        <img src="https://source.unsplash.com/featured/?music" alt="Destaque 3">
         <div class="content">
-          <h4>Você sabia?</h4>
-          <p>Descubra fatos estranhos e divertidos sobre filmes, séries e cultura pop.</p>
+          <h4>Título do Artigo 3</h4>
+          <p>Apresentação rápida para uma playlist ou novidade dentro da plataforma Beatflix.</p>
         </div>
       </div>
     </div>
   </section>
 
   <section>
-    <h3>Clipes, trailers & surtos</h3>
+    <h3>ARTIGOS</h3>
     <div class="cards">
       <div class="card">
-        <img src="https://via.placeholder.com/300x160?text=Vídeo+1" alt="Vídeo">
+        <img src="https://source.unsplash.com/featured/?popculture" alt="Artigo 1">
         <div class="content">
-          <h4>Review em surto</h4>
-          <p>Reações emocionadas ao último lançamento que ninguém superou.</p>
+          <h4>Curiosidade do Mês</h4>
+          <p>Descubra fatos inusitados sobre o universo das séries e filmes que você ama.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/featured/?review" alt="Artigo 2">
+        <div class="content">
+          <h4>Resenha Quente</h4>
+          <p>Confira nossa análise sincera sobre o último lançamento da temporada.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/featured/?tv" alt="Artigo 3">
+        <div class="content">
+          <h4>Top 5 do Mês</h4>
+          <p>Uma seleção dos melhores conteúdos para maratonar sem culpa!</p>
         </div>
       </div>
     </div>
   </section>
 
   <section>
-    <h3>Playlistzinhas que salvam o dia</h3>
+    <h3>VÍDEOS</h3>
     <div class="cards">
       <div class="card">
-        <img src="https://via.placeholder.com/300x160?text=Playlist+1" alt="Playlist">
+        <img src="https://source.unsplash.com/featured/?video" alt="Vídeo 1">
         <div class="content">
-          <h4>Sensível e intensa</h4>
-          <p>Músicas pra chorar no banho e repensar a vida com estilo.</p>
+          <h4>Entrevista Exclusiva</h4>
+          <p>Conversamos com os criadores da série mais comentada do momento!</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/featured/?trailer" alt="Vídeo 2">
+        <div class="content">
+          <h4>Trailer em Destaque</h4>
+          <p>Confira o novo trailer que está movimentando a internet.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/featured/?interview" alt="Vídeo 3">
+        <div class="content">
+          <h4>Por trás das câmeras</h4>
+          <p>Veja os bastidores das produções mais icônicas do streaming.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h3>PLAYLISTS</h3>
+    <div class="cards">
+      <div class="card">
+        <img src="https://source.unsplash.com/featured/?musicplaylist" alt="Playlist 1">
+        <div class="content">
+          <h4>Trilha Sonora Inesquecível</h4>
+          <p>As melhores músicas que marcaram sua série favorita.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/featured/?spotify" alt="Playlist 2">
+        <div class="content">
+          <h4>Beatflix Vibes</h4>
+          <p>Uma seleção para embalar seus dias com estilo e energia.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/featured/?musiclover" alt="Playlist 3">
+        <div class="content">
+          <h4>Sessão Nostalgia</h4>
+          <p>Relembre trilhas sonoras marcantes de clássicos do cinema.</p>
         </div>
       </div>
     </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 Beatflix. Um blog feito à base de café e música 💙</p>
+    <p>&copy; 2025 Beatflix. Um blog feito à base de café e música. 💙</p>
   </footer>
 
 </body>
