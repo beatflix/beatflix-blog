@@ -65,3 +65,118 @@
       font-size: 1.5rem;
       color: #7f5af0;
       margin-bottom: 2rem;
+      border-left: 4px solid #7f5af0;
+      padding-left: 1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 1rem;
+    }
+
+    .card-content h4 {
+      margin: 0 0 0.5rem;
+      color: #fff;
+    }
+
+    .card-content p {
+      color: #bbb;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      background-color: #111;
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #666;
+      font-size: 0.85rem;
+      margin-top: 4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Beatflix</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="blog.html">Blog</a>
+      <a href="videos.html">Vídeos</a>
+      <a href="playlists.html">Playlists</a>
+      <a href="sobre.html">Sobre</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Entre no universo Beatflix</h2>
+    <p>Um espaço para curiosidades, resenhas e playlists com um toque criativo e apaixonado por cultura pop.</p>
+  </section>
+
+  <section class="section">
+    <h3>Destaques da Semana</h3>
+    <div class="grid">
+      <div class="card">
+        <img src="https://via.placeholder.com/600x300" alt="Capa de artigo">
+        <div class="card-content">
+          <h4>3 séries que redefiniram o sci-fi moderno</h4>
+          <p>O gênero renasceu com tramas que equilibram emoção, filosofia e tecnologia.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/600x300" alt="Playlist destaque">
+        <div class="card-content">
+          <h4>Playlist: para sentir como se estivesse no episódio</h4>
+          <p>Sons que traduzem cenas. Perfeita pra maratonar com fones de ouvido.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h3>Curiosidades Pop</h3>
+    <div class="grid">
+      <div class="card">
+        <img src="https://via.placeholder.com/600x300" alt="Curiosidade 1">
+        <div class="card-content">
+          <h4>O easter egg escondido em Stranger Things</h4>
+          <p>Um detalhe que conecta as temporadas e poucos notaram.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/600x300" alt="Curiosidade 2">
+        <div class="card-content">
+          <h4>Roteiristas ou videntes?</h4>
+          <p>Previsões que as séries fizeram... e viraram realidade.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Beatflix • Feito por Beatriz com criatividade, playlists e muitas referências. 🎬
+  </footer>
+
+</body>
+</html>
