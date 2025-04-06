@@ -14,10 +14,10 @@
 
     /* Cabeçalho */
     header {
-      background-color: #111111;
+      background-color: #111111; /* Preto suave */
       color: white;
       text-align: center;
-      padding: 30px 10px 5px;
+      padding: 30px 10px 10px;
     }
 
     header h1 {
@@ -28,9 +28,9 @@
 
     header p {
       font-family: 'Archivo Black', sans-serif;
-      font-size: 18px;
+      font-size: 16px;
       letter-spacing: 1px;
-      margin: 5px 0 15px;
+      margin: 5px 0 10px;
     }
 
     /* Menu */
@@ -39,7 +39,6 @@
       display: flex;
       justify-content: center;
       border-bottom: 1px solid white;
-      flex-wrap: wrap;
     }
 
     nav a {
@@ -49,35 +48,11 @@
       padding: 15px 20px;
       font-size: 14px;
       transition: background 0.3s;
-      position: relative;
     }
 
     nav a:hover {
-      background-color: #d3d3d3;
+      background-color: #d3d3d3; /* Cinza claro */
       color: #111111;
-    }
-
-    /* Submenu */
-    .submenu {
-      display: none;
-      position: absolute;
-      background-color: #111111;
-      top: 50px;
-      left: 0;
-      z-index: 1;
-      flex-direction: column;
-      min-width: 160px;
-      border: 1px solid #fff;
-    }
-
-    .submenu a {
-      padding: 10px 15px;
-      font-size: 13px;
-      border-top: 1px solid #333;
-    }
-
-    .has-submenu:hover .submenu {
-      display: flex;
     }
 
     /* Destaque inicial */
@@ -164,7 +139,7 @@
       background-color: #111111;
       color: white;
       text-align: center;
-      padding: 20px;
+      padding: 20px 10px;
       font-size: 14px;
       margin-top: 40px;
     }
@@ -172,7 +147,7 @@
     /* Responsivo */
     @media (max-width: 768px) {
       nav {
-        flex-direction: column;
+        flex-wrap: wrap;
       }
       .cards {
         flex-direction: column;
@@ -190,13 +165,7 @@
   <nav>
     <a href="#">HOME</a>
     <a href="#">SOBRE</a>
-    <div class="has-submenu">
-      <a href="#">ARTIGOS</a>
-      <div class="submenu">
-        <a href="#">CURIOSIDADES</a>
-        <a href="#">RESENHAS</a>
-      </div>
-    </div>
+    <a href="#">ARTIGOS</a>
     <a href="#">VÍDEOS</a>
     <a href="#">PLAYLISTS</a>
   </nav>
@@ -239,22 +208,22 @@
       <div class="card">
         <img src="https://source.unsplash.com/featured/?popculture" alt="Artigo 1">
         <div class="content">
-          <h4>Curiosidade Incrível</h4>
-          <p>Descubra fatos curiosos sobre seus filmes e séries favoritos que você nunca imaginou.</p>
+          <h4>Curiosidade do Mês</h4>
+          <p>Descubra fatos inusitados sobre o universo das séries e filmes que você ama.</p>
         </div>
       </div>
       <div class="card">
         <img src="https://source.unsplash.com/featured/?review" alt="Artigo 2">
         <div class="content">
-          <h4>Resenha de Sucesso</h4>
-          <p>Uma análise divertida e crítica sobre um dos lançamentos mais comentados do mês.</p>
+          <h4>Resenha Quente</h4>
+          <p>Confira nossa análise sincera sobre o último lançamento da temporada.</p>
         </div>
       </div>
       <div class="card">
-        <img src="https://source.unsplash.com/featured/?series" alt="Artigo 3">
+        <img src="https://source.unsplash.com/featured/?tv" alt="Artigo 3">
         <div class="content">
-          <h4>Detalhes que Você Perdeu</h4>
-          <p>Releia a série com um novo olhar a partir dessas observações minuciosas.</p>
+          <h4>Top 5 do Mês</h4>
+          <p>Uma seleção dos melhores conteúdos para maratonar sem culpa!</p>
         </div>
       </div>
     </div>
@@ -267,21 +236,21 @@
         <img src="https://source.unsplash.com/featured/?video" alt="Vídeo 1">
         <div class="content">
           <h4>Entrevista Exclusiva</h4>
-          <p>Assista à nossa conversa com criadores de conteúdo e artistas do universo pop.</p>
+          <p>Conversamos com os criadores da série mais comentada do momento!</p>
         </div>
       </div>
       <div class="card">
         <img src="https://source.unsplash.com/featured/?trailer" alt="Vídeo 2">
         <div class="content">
-          <h4>Reações a Trailers</h4>
-          <p>Confira as reações mais engraçadas aos trailers recém-lançados.</p>
+          <h4>Trailer em Destaque</h4>
+          <p>Confira o novo trailer que está movimentando a internet.</p>
         </div>
       </div>
       <div class="card">
-        <img src="https://source.unsplash.com/featured/?streaming" alt="Vídeo 3">
+        <img src="https://source.unsplash.com/featured/?interview" alt="Vídeo 3">
         <div class="content">
-          <h4>Listas em Vídeo</h4>
-          <p>Top 5 episódios marcantes de cada série do momento em formato dinâmico.</p>
+          <h4>Por trás das câmeras</h4>
+          <p>Veja os bastidores das produções mais icônicas do streaming.</p>
         </div>
       </div>
     </div>
@@ -293,29 +262,29 @@
       <div class="card">
         <img src="https://source.unsplash.com/featured/?musicplaylist" alt="Playlist 1">
         <div class="content">
-          <h4>Sons de Série</h4>
-          <p>Uma seleção musical com as melhores trilhas de suas séries favoritas.</p>
+          <h4>Trilha Sonora Inesquecível</h4>
+          <p>As melhores músicas que marcaram sua série favorita.</p>
         </div>
       </div>
       <div class="card">
         <img src="https://source.unsplash.com/featured/?spotify" alt="Playlist 2">
         <div class="content">
           <h4>Beatflix Vibes</h4>
-          <p>Ouça as músicas que embalam a alma do nosso universo pop e criativo.</p>
+          <p>Uma seleção para embalar seus dias com estilo e energia.</p>
         </div>
       </div>
       <div class="card">
-        <img src="https://source.unsplash.com/featured/?audiowave" alt="Playlist 3">
+        <img src="https://source.unsplash.com/featured/?musiclover" alt="Playlist 3">
         <div class="content">
-          <h4>Climão de Domingo</h4>
-          <p>Uma curadoria especial para relaxar no final de semana com muito estilo.</p>
+          <h4>Sessão Nostalgia</h4>
+          <p>Relembre trilhas sonoras marcantes de clássicos do cinema.</p>
         </div>
       </div>
     </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 BEATFLIX | Criado com carinho por Beatriz</p>
+    <p>&copy; 2025 Beatflix. Todos os direitos reservados.</p>
   </footer>
 
 </body>
