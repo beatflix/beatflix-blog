@@ -5,16 +5,19 @@
   <title>BEATFLIX - Blog</title>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Open+Sans:wght@400;700;800&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: 'Open Sans', sans-serif;
-      background-color: #f9f9f9;
+      background-color: #f4f4f4;
       color: #333;
     }
 
-    /* Cabeçalho */
     header {
-      background-color: #111111;
+      background-color: #111;
       color: white;
       text-align: center;
       padding: 30px 10px 10px;
@@ -34,13 +37,13 @@
       margin: 0px 0 20px;
     }
 
-    /* Barra de busca animada com azul royal */
     .search-container {
       position: absolute;
       top: 20px;
       right: 20px;
       display: flex;
       align-items: center;
+      z-index: 10;
     }
 
     .search-container input[type="text"] {
@@ -86,12 +89,12 @@
       margin-left: 10px;
     }
 
-    /* Menu */
     nav {
-      background-color: #111111;
+      background-color: #111;
       display: flex;
       justify-content: center;
       border-bottom: 1px solid white;
+      flex-wrap: wrap;
     }
 
     nav a {
@@ -105,17 +108,15 @@
 
     nav a:hover {
       background-color: #d3d3d3;
-      color: #111111;
+      color: #111;
     }
 
-    /* Destaque inicial */
     .hero {
       background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                  url('images/beatflix-universo.png') no-repeat center center/cover;
+                  url('https://via.placeholder.com/1200x400?text=Beatflix+Universo') no-repeat center center/cover;
       color: white;
       text-align: center;
       padding: 120px 20px;
-      position: relative;
     }
 
     .hero h3 {
@@ -147,7 +148,6 @@
       }
     }
 
-    /* Seções */
     section {
       padding: 40px 20px;
       max-width: 1200px;
@@ -174,7 +174,7 @@
       border-radius: 5px;
       overflow: hidden;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      flex: 1 1 calc(33.33% - 20px);
+      flex: 1 1 calc(25% - 20px);
       min-width: 250px;
       transition: transform 0.3s ease;
     }
@@ -205,9 +205,8 @@
       color: #444;
     }
 
-    /* Rodapé */
     footer {
-      background-color: #111111;
+      background-color: #111;
       color: white;
       text-align: center;
       padding: 20px 10px;
@@ -215,17 +214,18 @@
       margin-top: 40px;
     }
 
-    /* Responsivo */
     @media (max-width: 768px) {
-      nav {
-        flex-wrap: wrap;
-      }
       .cards {
         flex-direction: column;
       }
+
       .search-container {
         top: 10px;
         right: 10px;
+      }
+
+      .search-toggle:checked ~ input[type="text"] {
+        width: 100px;
       }
     }
   </style>
@@ -235,10 +235,10 @@
   <header>
     <h1>BEATFLIX</h1>
     <p>POR BEATRIZ</p>
+
     <div class="search-container">
       <input type="checkbox" id="search-toggle" class="search-toggle">
       <label for="search-toggle">
-        <!-- Ícone de lupa (SVG branca) -->
         <svg viewBox="0 0 24 24">
           <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 5L20.49 19l-5-5zm-6 0C8.01 14 6 11.99 6 9.5S8.01 5 10.5 5 15 7.01 15 9.5 12.99 14 10.5 14z"/>
         </svg>
@@ -250,7 +250,7 @@
   <nav>
     <a href="#">HOME</a>
     <a href="#">SOBRE</a>
-    <a href="#">ARTIGOS</a>
+    <a href="#">BLOG</a>
     <a href="#">VÍDEOS</a>
     <a href="#">PLAYLISTS</a>
   </nav>
@@ -261,10 +261,68 @@
     <div class="scroll-down">&#x25BC;</div>
   </div>
 
-  <!-- Aqui você pode adicionar as seções com cards -->
+  <!-- Seções com cards -->
+  <section>
+    <h3>Destaques da Semana</h3>
+    <div class="cards">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x160?text=Artigo+1" alt="Destaque 1">
+        <div class="content">
+          <h4>Top 5 momentos de surto</h4>
+          <p>Uma seleção dos surtos mais icônicos e divertidos da semana.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x160?text=Artigo+2" alt="Destaque 2">
+        <div class="content">
+          <h4>Playlist de universos paralelos</h4>
+          <p>Sons que combinam com realidades alternativas da sua mente criativa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h3>Curiosidades Pop</h3>
+    <div class="cards">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x160?text=Curiosidade+1" alt="Curiosidade">
+        <div class="content">
+          <h4>Você sabia?</h4>
+          <p>Descubra fatos estranhos e divertidos sobre filmes, séries e cultura pop.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h3>Vídeos</h3>
+    <div class="cards">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x160?text=Vídeo+1" alt="Vídeo">
+        <div class="content">
+          <h4>Review em surto</h4>
+          <p>Reações emocionadas ao último lançamento que ninguém superou.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h3>Playlists</h3>
+    <div class="cards">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x160?text=Playlist+1" alt="Playlist">
+        <div class="content">
+          <h4>Sensível e intensa</h4>
+          <p>Músicas pra chorar no banho e repensar a vida com estilo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <footer>
-    <p>&copy; 2025 Beatflix. Um blog feito à base de café e música. 💙</p>
+    <p>&copy; 2025 Beatflix. Um blog feito à base de café e música 💙</p>
   </footer>
 
 </body>
