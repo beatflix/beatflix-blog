@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SFSQRTN33K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SFSQRTN33K');
+  </script>
+
   <meta charset="UTF-8">
   <title>BEATFLIX - Blog</title>
   <link rel="icon" type="image/png" href="images/beatflix-logo.png">
@@ -43,60 +52,62 @@
 
     .search-container {
       position: absolute;
-      top: 20px;
+      top: 30px;
       right: 20px;
-      display: flex;
-      align-items: center;
     }
 
-    .search-container input[type="text"] {
-      width: 0;
-      padding: 8px;
-      border-radius: 20px;
+    .search-button {
+      width: 40px;
+      height: 40px;
+      background-color: royalblue;
       border: none;
-      outline: none;
-      background-color: royalblue;
-      color: white;
-      font-size: 14px;
-      transition: width 0.4s ease;
-    }
-
-    .search-container:hover input[type="text"],
-    .search-container input[type="text"]:focus {
-      width: 180px;
-      padding-left: 12px;
-      padding-right: 12px;
-    }
-
-    .search-container .icon {
-      width: 36px;
-      height: 36px;
-      background-color: royalblue;
       border-radius: 50%;
+      cursor: pointer;
       display: flex;
-      justify-content: center;
       align-items: center;
-      margin-left: 8px;
+      justify-content: center;
     }
 
-    .search-container .icon::before {
-      content: "";
-      width: 12px;
-      height: 12px;
+    .search-button::before {
+      content: '';
+      display: inline-block;
+      width: 16px;
+      height: 16px;
       border: 2px solid white;
       border-radius: 50%;
       position: relative;
     }
 
-    .search-container .icon::after {
-      content: "";
+    .search-button::after {
+      content: '';
+      display: inline-block;
       width: 8px;
       height: 2px;
       background-color: white;
-      position: relative;
-      top: 6px;
-      left: -2px;
+      position: absolute;
       transform: rotate(45deg);
+      margin-left: 12px;
+      margin-top: 12px;
+    }
+
+    .search-input {
+      display: none;
+      margin-top: 10px;
+    }
+
+    .search-container:focus-within .search-input {
+      display: block;
+    }
+
+    .search-input input {
+      padding: 8px 12px;
+      font-size: 14px;
+      border: none;
+      border-radius: 20px;
+      outline: none;
+      background-color: royalblue;
+      color: white;
+      width: 160px;
     }
 
     nav {
@@ -141,13 +152,13 @@
       font-size: 16px;
     }
 
-    .scroll-down-arrow {
-      font-size: 32px;
-      color: white;
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
+    .down-arrow {
+      width: 0;
+      height: 0;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-top: 15px solid white;
+      margin: 20px auto 0;
     }
 
     section {
@@ -229,14 +240,18 @@
 <body>
 
   <header>
-    <div class="search-container">
-      <input type="text" placeholder="Buscar...">
-      <div class="icon"></div>
-    </div>
     <div class="logo-container">
       <h1>BEATFLIX</h1>
     </div>
     <p>POR BEATRIZ</p>
+
+    <!-- Barra de pesquisa personalizada -->
+    <div class="search-container" tabindex="0">
+      <button class="search-button"></button>
+      <div class="search-input">
+        <input type="text" placeholder="Pesquisar...">
+      </div>
+    </div>
   </header>
 
   <nav>
@@ -250,7 +265,7 @@
   <div class="hero">
     <h3>Universo guiado pelo algoritmo das vozes da minha cabeça</h3>
     <p>Curiosidades, playlists e surtos controlados com pitadas de paixão, julgamentos e referências que ninguém pediu.</p>
-    <div class="scroll-down-arrow">&#8595;</div>
+    <div class="down-arrow"></div>
   </div>
 
   <section>
@@ -322,21 +337,6 @@
   <footer>
     <p>&copy; 2025 Beatflix. Um blog feito à base de café e música. 💙</p>
   </footer>
-
-  <script>
-    function toggleSearch() {
-      document.getElementById('searchContainer').classList.toggle('active');
-    }
-
-    window.addEventListener('scroll', function () {
-      const arrow = document.getElementById('arrow');
-      if (window.scrollY > 100) {
-        arrow.classList.add('hide-arrow');
-      } else {
-        arrow.classList.remove('hide-arrow');
-      }
-    });
-  </script>
 
 </body>
 </html>
