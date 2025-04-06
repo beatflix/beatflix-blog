@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SFSQRTN33K"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-SFSQRTN33K');
-  </script>
-
   <meta charset="UTF-8">
   <title>BEATFLIX - Blog</title>
   <link rel="icon" type="image/png" href="images/beatflix-logo.png">
@@ -52,46 +43,60 @@
 
     .search-container {
       position: absolute;
-      top: 30px;
+      top: 20px;
       right: 20px;
       display: flex;
       align-items: center;
     }
 
-    .search-container input {
+    .search-container input[type="text"] {
       width: 0;
-      opacity: 0;
-      padding: 8px 10px;
-      font-size: 14px;
-      border: none;
+      padding: 8px;
       border-radius: 20px;
-      transition: width 0.4s ease, opacity 0.4s ease;
+      border: none;
+      outline: none;
       background-color: royalblue;
       color: white;
+      font-size: 14px;
+      transition: width 0.4s ease;
     }
 
-    .search-container.active input {
+    .search-container:hover input[type="text"],
+    .search-container input[type="text"]:focus {
       width: 180px;
-      opacity: 1;
-      margin-left: 10px;
+      padding-left: 12px;
+      padding-right: 12px;
     }
 
-    .search-button {
+    .search-container .icon {
+      width: 36px;
+      height: 36px;
       background-color: royalblue;
-      border: none;
       border-radius: 50%;
-      width: 35px;
-      height: 35px;
       display: flex;
-      align-items: center;
       justify-content: center;
-      cursor: pointer;
+      align-items: center;
+      margin-left: 8px;
     }
 
-    .search-button svg {
-      fill: white;
-      width: 18px;
-      height: 18px;
+    .search-container .icon::before {
+      content: "";
+      width: 12px;
+      height: 12px;
+      border: 2px solid white;
+      border-radius: 50%;
+      position: relative;
+    }
+
+    .search-container .icon::after {
+      content: "";
+      width: 8px;
+      height: 2px;
+      background-color: white;
+      position: relative;
+      top: 6px;
+      left: -2px;
+      transform: rotate(45deg);
     }
 
     nav {
@@ -136,23 +141,13 @@
       font-size: 16px;
     }
 
-    .down-arrow {
+    .scroll-down-arrow {
+      font-size: 32px;
+      color: white;
       position: absolute;
-      bottom: 10px;
+      bottom: 20px;
       left: 50%;
       transform: translateX(-50%);
-      font-size: 30px;
-      color: white;
-      animation: bounce 2s infinite;
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateX(-50%) translateY(0); }
-      50% { transform: translateX(-50%) translateY(10px); }
-    }
-
-    .hide-arrow {
-      display: none;
     }
 
     section {
@@ -234,18 +229,14 @@
 <body>
 
   <header>
+    <div class="search-container">
+      <input type="text" placeholder="Buscar...">
+      <div class="icon"></div>
+    </div>
     <div class="logo-container">
       <h1>BEATFLIX</h1>
     </div>
     <p>POR BEATRIZ</p>
-    <div class="search-container" id="searchContainer">
-      <button class="search-button" onclick="toggleSearch()">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-          <path d="M505 442.7L405.3 343c28.4-34.9 45.5-79.2 45.5-127C450.8 96.5 354.3 0 232.9 0S15 96.5 15 216.1s96.5 216.1 216.1 216.1c47.8 0 92.1-17.1 127-45.5l99.7 99.7c4.7 4.7 10.9 7 17 7s12.3-2.3 17-7c9.4-9.4 9.4-24.6 0-33.9zM232.9 376.1c-88.2 0-160-71.8-160-160s71.8-160 160-160 160 71.8 160 160-71.8 160-160 160z"/>
-        </svg>
-      </button>
-      <input type="text" placeholder="Buscar...">
-    </div>
   </header>
 
   <nav>
@@ -259,7 +250,7 @@
   <div class="hero">
     <h3>Universo guiado pelo algoritmo das vozes da minha cabeça</h3>
     <p>Curiosidades, playlists e surtos controlados com pitadas de paixão, julgamentos e referências que ninguém pediu.</p>
-    <div class="down-arrow" id="arrow">&#x25BC;</div>
+    <div class="scroll-down-arrow">&#8595;</div>
   </div>
 
   <section>
