@@ -58,41 +58,40 @@
       align-items: center;
     }
 
-    .search-icon {
-      width: 40px;
-      height: 40px;
+    .search-container input {
+      width: 0;
+      opacity: 0;
+      padding: 8px 10px;
+      font-size: 14px;
+      border: none;
+      border-radius: 20px;
+      transition: width 0.4s ease, opacity 0.4s ease;
       background-color: royalblue;
+      color: white;
+    }
+
+    .search-container.active input {
+      width: 180px;
+      opacity: 1;
+      margin-left: 10px;
+    }
+
+    .search-button {
+      background-color: royalblue;
+      border: none;
       border-radius: 50%;
+      width: 35px;
+      height: 35px;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      transition: background-color 0.3s ease;
     }
 
-    .search-icon svg {
+    .search-button svg {
       fill: white;
       width: 18px;
       height: 18px;
-    }
-
-    .search-box {
-      width: 0;
-      opacity: 0;
-      margin-left: 10px;
-      transition: all 0.3s ease;
-      border-radius: 20px;
-      border: none;
-      padding: 8px 15px;
-      font-size: 14px;
-      background-color: royalblue;
-      color: white;
-      outline: none;
-    }
-
-    .search-container.active .search-box {
-      width: 200px;
-      opacity: 1;
     }
 
     nav {
@@ -137,28 +136,23 @@
       font-size: 16px;
     }
 
-    .scroll-down {
+    .down-arrow {
       position: absolute;
-      bottom: 20px;
+      bottom: 10px;
       left: 50%;
       transform: translateX(-50%);
       font-size: 30px;
       color: white;
       animation: bounce 2s infinite;
-      transition: opacity 0.3s ease;
     }
 
     @keyframes bounce {
-      0%, 100% {
-        transform: translate(-50%, 0);
-      }
-      50% {
-        transform: translate(-50%, 10px);
-      }
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(10px); }
     }
 
-    .scroll-down.hidden {
-      opacity: 0;
+    .hide-arrow {
+      display: none;
     }
 
     section {
@@ -240,24 +234,18 @@
 <body>
 
   <header>
-    <div class="search-container" id="searchContainer">
-      <div class="search-icon" onclick="toggleSearch()">
-        <svg viewBox="0 0 24 24">
-          <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 
-          6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 
-          4.23-1.57l.27.28v.79l5 4.99L20.49 
-          19l-4.99-5zm-6 0C8.01 14 6 11.99 
-          6 9.5S8.01 5 10.5 5 15 7.01 
-          15 9.5 12.99 14 10.5 14z"/>
-        </svg>
-      </div>
-      <input type="text" class="search-box" placeholder="Pesquisar...">
-    </div>
-
     <div class="logo-container">
       <h1>BEATFLIX</h1>
     </div>
     <p>POR BEATRIZ</p>
+    <div class="search-container" id="searchContainer">
+      <button class="search-button" onclick="toggleSearch()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+          <path d="M505 442.7L405.3 343c28.4-34.9 45.5-79.2 45.5-127C450.8 96.5 354.3 0 232.9 0S15 96.5 15 216.1s96.5 216.1 216.1 216.1c47.8 0 92.1-17.1 127-45.5l99.7 99.7c4.7 4.7 10.9 7 17 7s12.3-2.3 17-7c9.4-9.4 9.4-24.6 0-33.9zM232.9 376.1c-88.2 0-160-71.8-160-160s71.8-160 160-160 160 71.8 160 160-71.8 160-160 160z"/>
+        </svg>
+      </button>
+      <input type="text" placeholder="Buscar...">
+    </div>
   </header>
 
   <nav>
@@ -271,24 +259,70 @@
   <div class="hero">
     <h3>Universo guiado pelo algoritmo das vozes da minha cabeça</h3>
     <p>Curiosidades, playlists e surtos controlados com pitadas de paixão, julgamentos e referências que ninguém pediu.</p>
-    <div class="scroll-down" id="scrollDown">&#x25BC;</div>
+    <div class="down-arrow" id="arrow">&#x25BC;</div>
   </div>
 
   <section>
-    <h3>Destaques da Semana</h3>
+    <h3>DESTAQUES DA SEMANA</h3>
     <div class="cards">
       <div class="card">
-        <img src="images/exemplo1.jpg" alt="Destaque 1">
+        <img src="https://source.unsplash.com/featured/?film" alt="Destaque 1">
         <div class="content">
-          <h4>Exemplo de Post</h4>
-          <p>Esse é um texto exemplo para mostrar como ficará seu card.</p>
+          <h4>Título do Artigo 1</h4>
+          <p>Um breve resumo do artigo que chama atenção e convida o leitor a continuar lendo.</p>
         </div>
       </div>
       <div class="card">
-        <img src="images/exemplo2.jpg" alt="Destaque 2">
+        <img src="https://source.unsplash.com/featured/?cinema" alt="Destaque 2">
         <div class="content">
-          <h4>Outro Post Legal</h4>
-          <p>Mais um exemplo de conteúdo bacana no estilo Beatflix.</p>
+          <h4>Título do Artigo 2</h4>
+          <p>Outro texto curto que ajuda a resumir o conteúdo da postagem ou resenha destacada.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://source.unsplash.com/featured/?music" alt="Destaque 3">
+        <div class="content">
+          <h4>Título do Artigo 3</h4>
+          <p>Apresentação rápida para uma playlist ou novidade dentro da plataforma Beatflix.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h3>TEXTÃO DO BEM</h3>
+    <div class="cards">
+      <div class="card">
+        <img src="https://source.unsplash.com/featured/?popculture" alt="Artigo 1">
+        <div class="content">
+          <h4>Curiosidade do Mês</h4>
+          <p>Descubra fatos inusitados sobre o universo das séries e filmes que você ama.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h3>CLIPES, TRAILERS & SURTOS</h3>
+    <div class="cards">
+      <div class="card">
+        <img src="https://source.unsplash.com/featured/?video" alt="Vídeo 1">
+        <div class="content">
+          <h4>Entrevista Exclusiva</h4>
+          <p>Conversamos com os criadores da série mais comentada do momento!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h3>PLAYLISTZINHAS QUE SALVAM O DIA</h3>
+    <div class="cards">
+      <div class="card">
+        <img src="https://source.unsplash.com/featured/?musicplaylist" alt="Playlist 1">
+        <div class="content">
+          <h4>Trilha Sonora Inesquecível</h4>
+          <p>As melhores músicas que marcaram sua série favorita.</p>
         </div>
       </div>
     </div>
@@ -300,16 +334,15 @@
 
   <script>
     function toggleSearch() {
-      const container = document.getElementById('searchContainer');
-      container.classList.toggle('active');
+      document.getElementById('searchContainer').classList.toggle('active');
     }
 
-    window.addEventListener('scroll', () => {
-      const scroll = document.getElementById('scrollDown');
+    window.addEventListener('scroll', function () {
+      const arrow = document.getElementById('arrow');
       if (window.scrollY > 100) {
-        scroll.classList.add('hidden');
+        arrow.classList.add('hide-arrow');
       } else {
-        scroll.classList.remove('hidden');
+        arrow.classList.remove('hide-arrow');
       }
     });
   </script>
