@@ -1,214 +1,47 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Sobre | BEATFLIX</title>
-  <link rel="icon" type="image/png" href="images/beatflix-logo.png">
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Open+Sans:wght@400;700;800&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Open Sans', sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-
-    header {
-      background-color: #111111;
-      color: white;
-      text-align: center;
-      padding: 30px 10px 10px;
-      position: relative;
-    }
-
-    .logo-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .logo-container h1 {
-      font-family: 'Archivo Black', sans-serif;
-      font-size: 60px;
-      margin: 0;
-    }
-
-    header p {
-      font-family: 'Archivo Black', sans-serif;
-      font-size: 16px;
-      letter-spacing: 1px;
-      margin: 0px 0 20px;
-    }
-
-    .search-container {
-      position: absolute;
-      top: 30px;
-      right: 20px;
-    }
-
-    .search-button {
-      width: 40px;
-      height: 40px;
-      background-color: royalblue;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0;
-    }
-
-    .search-button svg {
-      width: 20px;
-      height: 20px;
-    }
-
-    .search-input {
-      display: none;
-      margin-top: 10px;
-    }
-
-    .search-container:focus-within .search-input {
-      display: block;
-    }
-
-    .search-input input {
-      padding: 8px 12px;
-      font-size: 14px;
-      border: none;
-      border-radius: 20px;
-      outline: none;
-      background-color: royalblue;
-      color: white;
-      width: 160px;
-    }
-
-    .search-input input::placeholder {
-      color: white;
-      opacity: 1;
-    }
-
-    nav {
-      background-color: #111111;
-      display: flex;
-      justify-content: center;
-      border-bottom: 1px solid white;
-    }
-
-    nav a {
-      color: white;
-      font-family: 'Archivo Black', sans-serif;
-      text-decoration: none;
-      padding: 15px 20px;
-      font-size: 14px;
-      transition: background 0.3s;
-    }
-
-    nav a:hover {
-      background-color: #d3d3d3;
-      color: #111111;
-    }
-
-    .area-destaque {
-      width: 100%;
-      height: 400px;
-      overflow: hidden;
-    }
-
-    .area-destaque img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
- .secao {
-  max-width: 900px;
-  margin: 40px auto 20px;
-  padding: 0 20px;
-}
-
-.titulo-secao {
-  font-family: 'Archivo Black', sans-serif;
-  font-size: 22px;
-  color: #111;
-  border-bottom: 3px solid royalblue;
-  display: inline-block;
-  padding-bottom: 5px;
-  margin-bottom: 20px;
-}
-
-    .container-texto {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 20px 40px;
-    }
-
-    .container-texto p {
-      font-size: 17px;
-      line-height: 1.7;
-      margin-bottom: 20px;
-      text-align: justify;
-    }
-
-    footer {
-      background-color: #111111;
-      color: white;
-      text-align: center;
-      padding: 20px 10px;
-      font-size: 14px;
-      margin-top: 40px;
-    }
-  </style>
+  <title>Sobre | Beatflix</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <header>
-    <div class="logo-container">
-      <h1>BEATFLIX</h1>
-    </div>
-    <p>POR BEATRIZ</p>
-
-    <div class="search-container" tabindex="0">
-      <button class="search-button">
-        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
-      </button>
-      <div class="search-input">
-        <input type="text" placeholder="Pesquisar...">
-      </div>
-    </div>
+  <header class="cabecalho">
+    <h1 class="titulo-site">BEATFLIX</h1>
+    <p class="subtitulo-site">BY BEATRIZ</p>
+    <nav class="menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sobre.html" class="ativo">Sobre</a></li>
+        <li><a href="artigos.html">Blog</a></li>
+        <li><a href="#">Vídeos</a></li>
+        <li><a href="#">Playlists</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <nav>
-    <a href="index.html">INÍCIO</a>
-    <a href="sobre.html">SOBRE</a>
-    <a href="artigos.html">ARTIGOS</a>
-    <a href="videos.html">VÍDEOS</a>
-    <a href="playlists.html">PLAYLISTS</a>
-  </nav>
+  <!-- Seção de destaque com imagem -->
+  <section class="destaque">
+    <img src="img/beatflix-sobre.jpg" alt="Imagem de destaque sobre o Beatflix" class="imagem-destaque">
+  </section>
 
-  <div class="area-destaque">
-    <img src="images/beatflix-sobre.png" alt="Imagem de destaque da página Sobre">
-  </div>
+  <!-- Título com linha azul longa -->
+  <section class="secao">
+    <div class="linha-titulo">
+      <h2 class="titulo-secao">Sobre o Beatflix</h2>
+    </div>
+  </section>
 
-<div class="secao">
-  <h2 class="titulo-secao">SOBRE O BEATFLIX</h2>
-</div>
-
-  <div class="container-texto">
-    <p>O Beatflix nasceu da vontade de compartilhar curiosidades, listas e resenhas com uma pitada de música e personalidade. Aqui, você vai encontrar desde dicas para maratonar no fim de semana até reflexões sobre filmes, trilhas sonoras e cultura pop.</p>
-    <p>Por trás da tela, quem escreve é Beatriz — publicitária em formação, amante de playlists, histórias bem contadas e boas conversas. Esse é um espaço leve e criativo, feito pra gente que ama descobrir coisas novas e conversar sobre o que sente.</p>
-    <p>Bem-vindo(a) ao Beatflix. Sinta-se em casa! 💙</p>
-  </div>
-
-  <footer>
-    <p>&copy; 2025 Beatflix. Um blog feito à base de café e música. 💙</p>
-  </footer>
+  <!-- Conteúdo do texto sobre -->
+  <section class="secao">
+    <p>
+      O Beatflix nasceu da vontade de compartilhar curiosidades, listas e resenhas com uma pitada de música e personalidade. Aqui, você vai encontrar desde dicas para maratonar no fim de semana até reflexões sobre filmes, trilhas sonoras e cultura pop.    </p>
+    <p>
+      Por trás da tela, quem escreve é Beatriz — publicitária em formação, amante de playlists, histórias bem contadas e boas conversas. Esse é um espaço leve e criativo, feito pra gente que ama descobrir coisas novas e conversar sobre o que sente.    </p>
+    <p>
+      O Beatflix é todinho seu agora. Puxa uma cadeira e dá o play! 💙
+    </p>
+  </section>
 
 </body>
 </html>
