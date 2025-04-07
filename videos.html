@@ -1,38 +1,278 @@
-<!-- CÓDIGO DO BODY PARA A SEÇÃO DE VÍDEOS -->
-<section>
-  <h3>VÍDEOS QUE VALEM O PLAY</h3>
-  <div class="cards">
-    <a href="https://youtu.be/OhrH-LJHbUg?si=lSzGwGKGVXcm7g8Q" target="_blank" style="text-decoration: none; color: inherit;">
-      <div class="card">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SFSQRTN33K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SFSQRTN33K');
+  </script>
+
+  <meta charset="UTF-8">
+  <title>Vídeos | BEATFLIX</title>
+  <link rel="icon" type="image/png" href="images/beatflix-logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Open+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #111111;
+      color: white;
+      text-align: center;
+      padding: 30px 10px 10px;
+      position: relative;
+    }
+
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo-container h1 {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 60px;
+      margin: 0;
+    }
+
+    header p {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 16px;
+      letter-spacing: 1px;
+      margin: 0px 0 20px;
+    }
+
+    .search-container {
+      position: absolute;
+      top: 30px;
+      right: 20px;
+    }
+
+    .search-button {
+      width: 40px;
+      height: 40px;
+      background-color: royalblue;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+
+    .search-button svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .search-input {
+      display: none;
+      margin-top: 10px;
+    }
+
+    .search-container:focus-within .search-input {
+      display: block;
+    }
+
+    .search-input input {
+      padding: 8px 12px;
+      font-size: 14px;
+      border: none;
+      border-radius: 20px;
+      outline: none;
+      background-color: royalblue;
+      color: white;
+      width: 160px;
+    }
+
+    .search-input input::placeholder {
+      color: white;
+    }
+
+    nav {
+      background-color: #111111;
+      display: flex;
+      justify-content: center;
+      border-bottom: 1px solid white;
+    }
+
+    nav a {
+      color: white;
+      font-family: 'Archivo Black', sans-serif;
+      text-decoration: none;
+      padding: 15px 20px;
+      font-size: 14px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #d3d3d3;
+      color: #111111;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    section h3 {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 22px;
+      border-bottom: 3px solid royalblue;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+      color: #111;
+      max-width: 100%;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      flex: 1 1 calc(33.33% - 20px);
+      min-width: 250px;
+      transition: transform 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card .content {
+      padding: 15px;
+    }
+
+    .card h4 {
+      font-family: 'Open Sans Black', sans-serif;
+      font-size: 16px;
+      margin: 0 0 10px;
+      color: royalblue;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #444;
+    }
+
+    footer {
+      background-color: #111111;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .cards {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-container">
+      <h1>BEATFLIX</h1>
+    </div>
+    <p>POR BEATRIZ</p>
+    <div class="search-container" tabindex="0">
+      <button class="search-button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </button>
+      <div class="search-input">
+        <input type="text" placeholder="Pesquisar...">
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <a href="index.html">INÍCIO</a>
+    <a href="sobre.html">SOBRE</a>
+    <a href="artigos.html">ARTIGOS</a>
+    <a href="videos.html">VÍDEOS</a>
+    <a href="playlists.html">PLAYLISTS</a>
+  </nav>
+
+  <section>
+    <h3>VÍDEOS QUE VALEM O PLAY</h3>
+    <div class="cards">
+
+      <a href="https://youtu.be/OhrH-LJHbUg?si=lSzGwGKGVXcm7g8Q" class="card" target="_blank">
         <img src="https://img.youtube.com/vi/OhrH-LJHbUg/hqdefault.jpg" alt="Vídeo 1">
         <div class="content">
           <h4>Bastidores da criação de histórias</h4>
           <p>Descubra como roteiros incríveis são feitos do zero.</p>
         </div>
-      </div>
-    </a>
+      </a>
 
-    <a href="https://youtu.be/A01K0X-DGhU?si=EZ1iu8T6W7g2IJAU" target="_blank" style="text-decoration: none; color: inherit;">
-      <div class="card">
+      <a href="https://youtu.be/A01K0X-DGhU?si=EZ1iu8T6W7g2IJAU" class="card" target="_blank">
         <img src="https://img.youtube.com/vi/A01K0X-DGhU/hqdefault.jpg" alt="Vídeo 2">
         <div class="content">
           <h4>Visual futurista no cinema</h4>
           <p>Explorando referências visuais e conceitos de sci-fi moderno.</p>
         </div>
-      </div>
-    </a>
+      </a>
 
-    <a href="https://youtu.be/dX8kj9sGdaQ?si=E25opjabrG2ML9tW" target="_blank" style="text-decoration: none; color: inherit;">
-      <div class="card">
+      <a href="https://youtu.be/dX8kj9sGdaQ?si=E25opjabrG2ML9tW" class="card" target="_blank">
         <img src="https://img.youtube.com/vi/dX8kj9sGdaQ/hqdefault.jpg" alt="Vídeo 3">
         <div class="content">
           <h4>Como nasce uma trilha sonora?</h4>
           <p>Veja o processo criativo por trás das músicas que embalam cenas.</p>
         </div>
-      </div>
-    </a>
+      </a>
 
-    <a href="https://youtu.be/GsUqYA1CeBU?si=u1OhhHav2ShDWLYd" target="_blank" style="text-decoration: none; color: inherit;">
-      <div class="card">
+      <a href="https://youtu.be/GsUqYA1CeBU?si=u1OhhHav2ShDWLYd" class="card" target="_blank">
         <img src="https://img.youtube.com/vi/GsUqYA1CeBU/hqdefault.jpg" alt="Vídeo 4">
         <div class="content">
+          <h4>Estética de séries que marcaram</h4>
+          <p>Uma análise visual de produções que viraram referência.</p>
+        </div>
+      </a>
+
+      <a href="https://youtu.be/xn5xyc-TZV4?si=6dHjj4-mPXJK6Hdk" class="card" target="_blank">
+        <img src="https://img.youtube.com/vi/xn5xyc-TZV4/hqdefault.jpg" alt="Vídeo 5">
+        <div class="content">
+          <h4>O poder dos diálogos marcantes</h4>
+          <p>Como uma boa fala pode eternizar uma cena.</p>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Beatflix. Um blog feito à base de café e música. 💙</p>
+  </footer>
+
+</body>
+</html>
