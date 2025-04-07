@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>BEATFLIX - Vídeos</title>
+  <link rel="icon" type="image/png" href="images/beatflix-logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Open+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #111;
+      color: white;
+      text-align: center;
+      padding: 30px 10px 10px;
+      position: relative;
+    }
+
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo-container h1 {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 60px;
+      margin: 0;
+    }
+
+    header p {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 16px;
+      letter-spacing: 1px;
+      margin: 0px 0 20px;
+    }
+
+    .search-container {
+      position: absolute;
+      top: 30px;
+      right: 20px;
+    }
+
+    .search-button {
+      width: 40px;
+      height: 40px;
+      background-color: royalblue;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+
+    .search-button svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .search-input {
+      display: none;
+      margin-top: 10px;
+    }
+
+    .search-container:focus-within .search-input {
+      display: block;
+    }
+
+    .search-input input {
+      padding: 8px 12px;
+      font-size: 14px;
+      border: none;
+      border-radius: 20px;
+      outline: none;
+      background-color: royalblue;
+      color: white;
+      width: 160px;
+    }
+
+    .search-input input::placeholder {
+      color: white;
+      opacity: 1;
+    }
+
+    nav {
+      background-color: #111;
+      display: flex;
+      justify-content: center;
+      border-bottom: 1px solid white;
+    }
+
+    nav a {
+      color: white;
+      font-family: 'Archivo Black', sans-serif;
+      text-decoration: none;
+      padding: 15px 20px;
+      font-size: 14px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #d3d3d3;
+      color: #111;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                  url('images/beatflix-universo.png') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 130px 20px;
+      position: relative;
+    }
+
+    .hero h3 {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 16px;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    section h3 {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 22px;
+      border-bottom: 3px solid royalblue;
+      padding-bottom: 5px;
+      margin-bottom: 30px;
+      color: #111;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .video-card {
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .video-card:hover {
+      transform: scale(1.02);
+    }
+
+    .video-thumb {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .video-info {
+      padding: 15px;
+    }
+
+    .video-info h4 {
+      font-family: 'Open Sans Black', sans-serif;
+      font-size: 16px;
+      margin: 0 0 10px;
+      color: royalblue;
+    }
+
+    .video-info p {
+      font-size: 14px;
+      color: #444;
+      margin: 0;
+    }
+
+    footer {
+      background-color: #111;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-container">
+      <h1>BEATFLIX</h1>
+    </div>
+    <p>POR BEATRIZ</p>
+
+    <div class="search-container" tabindex="0">
+      <button class="search-button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </button>
+      <div class="search-input">
+        <input type="text" placeholder="Pesquisar...">
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <a href="index.html">INÍCIO</a>
+    <a href="sobre.html">SOBRE</a>
+    <a href="artigos.html">ARTIGOS</a>
+    <a href="videos.html">VÍDEOS</a>
+    <a href="playlists.html">PLAYLISTS</a>
+  </nav>
+
+  <div class="hero">
+    <h3>Vídeos para rir, chorar e reassistir mil vezes</h3>
+    <p>Drops criativos, entrevistas, comentários e recortes de tudo que mexe com a nossa cabeça pop.</p>
+  </div>
+
+  <section>
+    <h3>VÍDEOS RECENTES</h3>
+    <div class="video-grid">
+      <div class="video-card">
+        <img src="https://img.youtube.com/vi/TcMBFSGVi1c/maxresdefault.jpg" alt="Thumb" class="video-thumb">
+        <div class="video-info">
+          <h4>O dia em que choramos com os Vingadores</h4>
+          <p>Comentamos as cenas mais marcantes do Ultimato. Prepare os lencinhos!</p>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <img src="https://img.youtube.com/vi/fOvwcxtMaNk/maxresdefault.jpg" alt="Thumb" class="video-thumb">
+        <div class="video-info">
+          <h4>Entrevista: Elenco de Stranger Things</h4>
+          <p>Um papo sincero sobre bastidores, sustos e amizade real.</p>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <img src="https://img.youtube.com/vi/Z1BCujX3pw8/maxresdefault.jpg" alt="Thumb" class="video-thumb">
+        <div class="video-info">
+          <h4>Reagindo ao trailer de The Batman</h4>
+          <p>Primeiras impressões, surtos e teorias em tempo real.</p>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <img src="https://img.youtube.com/vi/RfinhxFvGAY/maxresdefault.jpg" alt="Thumb" class="video-thumb">
+        <div class="video-info">
+          <h4>TOP 5 trilhas que mudaram tudo</h4>
+          <p>Essas músicas transformaram cenas em emoções inesquecíveis.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Beatflix. Um blog feito à base de café e música. 💙</p>
+  </footer>
+
+</body>
+</html>
