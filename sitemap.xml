@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://beatflix.github.io/beatflix-blog/</loc>
+  <lastmod>2025-04-07T01:50:58+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://beatflix.github.io/beatflix-blog/sobre.html</loc>
+  <lastmod>2025-04-07T01:50:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://beatflix.github.io/beatflix-blog/artigos.html</loc>
+  <lastmod>2025-04-07T01:50:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://beatflix.github.io/beatflix-blog/videos.html</loc>
+  <lastmod>2025-04-07T01:50:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://beatflix.github.io/beatflix-blog/playlists.html</loc>
+  <lastmod>2025-04-07T01:50:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://beatflix.github.io/beatflix-blog/index.html</loc>
+  <lastmod>2025-04-07T01:50:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://beatflix.github.io/beatflix-blog/artigo1.html</loc>
+  <lastmod>2025-04-07T01:50:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
