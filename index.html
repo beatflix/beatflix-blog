@@ -155,64 +155,143 @@
     <a href="#">PLAYLISTS</a>
   </nav>
 
-  <!-- DESTAQUES EM 3 COLUNAS -->
-  <section class="destaques">
-    <h3>DESTAQUES DA SEMANA</h3>
-    <div class="cards">
-      <a href="artigo1.html" class="card-link">
-        <div class="card">
-          <img src="https://source.unsplash.com/featured/?review,movie" alt="Resenha 1">
-          <div class="content">
-            <h4>Série X é tudo isso mesmo?</h4>
-            <p>Uma análise sincera sobre o hype envolvendo a nova queridinha do streaming.</p>
-          </div>
-        </div>
-      </a>
+ <style>
+  .section-title {
+    max-width: 960px;
+    margin: 40px auto 20px;
+    padding: 0 20px;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 22px;
+    border-bottom: 2px solid #ccc;
+  }
 
-      <div class="card">
-        <img src="https://source.unsplash.com/featured/?cinema" alt="Destaque 2">
-        <div class="content">
-          <h4>Título do Artigo 2</h4>
-          <p>Uma outra análise pop sobre cultura audiovisual.</p>
-        </div>
-      </div>
+  .cards.destaques {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 960px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
+  }
 
-      <div class="card">
-        <img src="https://source.unsplash.com/featured/?music" alt="Destaque 3">
-        <div class="content">
-          <h4>Título do Artigo 3</h4>
-          <p>Apresentação rápida de uma playlist ou novidade Beatflix.</p>
-        </div>
+  .cards.outras {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 960px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
+  }
+
+  .card {
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .card .content {
+    padding: 15px;
+  }
+
+  .card h4 {
+    font-family: 'Open Sans Black', sans-serif;
+    margin: 0 0 10px;
+    font-size: 18px;
+    color: #111;
+  }
+
+  .card p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+  }
+
+  a.card-link {
+    text-decoration: none;
+    color: inherit;
+  }
+</style>
+
+<!-- DESTAQUES DA SEMANA -->
+<h3 class="section-title">DESTAQUES DA SEMANA</h3>
+<div class="cards destaques">
+  <a href="artigo1.html" class="card-link">
+    <div class="card">
+      <img src="https://source.unsplash.com/featured/?review,movie" alt="Resenha 1">
+      <div class="content">
+        <h4>Série X é tudo isso mesmo?</h4>
+        <p>Uma análise sincera sobre o hype envolvendo a nova queridinha do streaming.</p>
       </div>
     </div>
-  </section>
+  </a>
 
-  <!-- OUTRAS SESSÕES COM 1 CARD -->
-  <section class="outros">
-    <h3>TEXTÕES DO BEM</h3>
-    <div class="cards">
-      <div class="card">
-        <img src="https://source.unsplash.com/featured/?popculture" alt="Artigo 1">
-        <div class="content">
-          <h4>Série X é tudo isso mesmo?</h4>
-          <p>Uma análise sincera sobre o hype envolvendo a nova queridinha do streaming.</p>
-        </div>
+  <div class="card">
+    <img src="https://source.unsplash.com/featured/?cinema" alt="Destaque 2">
+    <div class="content">
+      <h4>Título do Artigo 2</h4>
+      <p>Reflexão sobre o impacto de um novo filme no cenário pop atual.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://source.unsplash.com/featured/?music" alt="Destaque 3">
+    <div class="content">
+      <h4>Título do Artigo 3</h4>
+      <p>Apresentação rápida para uma playlist ou novidade da Beatflix.</p>
+    </div>
+  </div>
+</div>
+
+<!-- TEXTÕES DO BEM -->
+<h3 class="section-title">TEXTÕES DO BEM</h3>
+<div class="cards outras">
+  <a href="artigo1.html" class="card-link">
+    <div class="card">
+      <img src="https://source.unsplash.com/featured/?popculture" alt="Artigo 1">
+      <div class="content">
+        <h4>Série X é tudo isso mesmo?</h4>
+        <p>Uma análise sincera sobre o hype envolvendo a nova queridinha do streaming.</p>
       </div>
     </div>
-  </section>
+  </a>
+</div>
 
-  <section class="outros">
-    <h3>CURIOSIDADES POP</h3>
-    <div class="cards">
-      <div class="card">
-        <img src="https://source.unsplash.com/featured/?tv" alt="Artigo 2">
-        <div class="content">
-          <h4>Segredos de bastidores das séries mais vistas</h4>
-          <p>Coisas que ninguém te contou sobre os sets de gravação.</p>
-        </div>
-      </div>
+<!-- RESENHAS & SURTOS -->
+<h3 class="section-title">RESENHAS & SURTOS</h3>
+<div class="cards outras">
+  <div class="card">
+    <img src="https://source.unsplash.com/featured/?tvshow" alt="Artigo 2">
+    <div class="content">
+      <h4>Resenha do Episódio Final</h4>
+      <p>Um surto controlado sobre o desfecho surpreendente da série do momento.</p>
     </div>
-  </section>
+  </div>
+</div>
+
+<!-- PLAYLISTZINHAS QUE SALVAM O DIA -->
+<h3 class="section-title">PLAYLISTZINHAS QUE SALVAM O DIA</h3>
+<div class="cards outras">
+  <div class="card">
+    <img src="https://source.unsplash.com/featured/?playlist" alt="Artigo 3">
+    <div class="content">
+      <h4>Playlist para Dias Cinzas</h4>
+      <p>Seleção musical feita para transformar qualquer vibe.</p>
+    </div>
+  </div>
+</div>
 
   <footer>
     <p>&copy; 2025 Beatflix. Um blog feito à base de café e música. 💙</p>
