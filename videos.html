@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SFSQRTN33K"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-SFSQRTN33K');
-  </script>
-
   <meta charset="UTF-8">
   <title>Vídeos | BEATFLIX</title>
   <link rel="icon" type="image/png" href="images/beatflix-logo.png">
@@ -96,7 +87,6 @@
 
     .search-input input::placeholder {
       color: white;
-      opacity: 1;
     }
 
     nav {
@@ -120,44 +110,61 @@
       color: #111111;
     }
 
-    main.videos {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 20px;
+    section {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
     }
 
-    main.videos h2 {
+    section h3 {
       font-family: 'Archivo Black', sans-serif;
-      font-size: 32px;
-      color: royalblue;
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .video-card {
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      padding: 20px;
+      font-size: 22px;
+      border-bottom: 3px solid royalblue;
+      padding-bottom: 5px;
       margin-bottom: 20px;
+      color: #111;
     }
 
-    .video-card iframe {
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      flex: 1 1 calc(33.33% - 20px);
+      min-width: 250px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
       width: 100%;
-      height: 400px;
-      border: none;
-      border-radius: 8px;
+      height: 180px;
+      object-fit: cover;
     }
 
-    .video-card h3 {
+    .card .content {
+      padding: 15px;
+    }
+
+    .card h4 {
       font-family: 'Open Sans Black', sans-serif;
-      font-size: 20px;
-      margin: 15px 0 10px;
+      font-size: 16px;
+      margin: 0 0 10px;
+      color: royalblue;
     }
 
-    .video-card p {
-      font-size: 16px;
-      line-height: 1.6;
+    .card p {
+      font-size: 14px;
+      color: #444;
     }
 
     footer {
@@ -168,6 +175,15 @@
       font-size: 14px;
       margin-top: 40px;
     }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-wrap: wrap;
+      }
+      .cards {
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
 <body>
@@ -177,7 +193,6 @@
       <h1>BEATFLIX</h1>
     </div>
     <p>POR BEATRIZ</p>
-
     <div class="search-container" tabindex="0">
       <button class="search-button">
         <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -199,18 +214,20 @@
     <a href="playlists.html">PLAYLISTS</a>
   </nav>
 
-  <main class="videos">
-    <h2 id="videos-recentes">Vídeos Recentes</h2>
-
-    <!-- Exemplo de um vídeo -->
-    <div class="video-card">
-      <iframe src="https://www.youtube.com/embed/SEU_VIDEO_AQUI" allowfullscreen></iframe>
-      <h3>Título do Vídeo</h3>
-      <p>Descrição breve sobre o vídeo, tema abordado ou por que vale a pena assistir.</p>
+  <section>
+    <h3>VÍDEOS QUE VALEM O PLAY</h3>
+    <div class="cards">
+      <a href="#" style="text-decoration: none; color: inherit;">
+        <div class="card">
+          <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="Video destaque">
+          <div class="content">
+            <h4>Entrevista com o criador da série Z</h4>
+            <p>Um papo leve, com cortes rápidos e takes descontraídos.</p>
+          </div>
+        </div>
+      </a>
     </div>
-
-    <!-- Adicione mais cards abaixo conforme necessário -->
-  </main>
+  </section>
 
   <footer>
     <p>&copy; 2025 Beatflix. Um blog feito à base de café e música. 💙</p>
