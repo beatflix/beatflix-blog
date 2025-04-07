@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>BEATFLIX - Playlists</title>
+  <link rel="icon" type="image/png" href="images/beatflix-logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Open+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #111111;
+      color: white;
+      text-align: center;
+      padding: 30px 10px 10px;
+      position: relative;
+    }
+
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo-container h1 {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 60px;
+      margin: 0;
+    }
+
+    header p {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 16px;
+      letter-spacing: 1px;
+      margin: 0px 0 20px;
+    }
+
+    .search-container {
+      position: absolute;
+      top: 30px;
+      right: 20px;
+    }
+
+    .search-button {
+      width: 40px;
+      height: 40px;
+      background-color: royalblue;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+
+    .search-button svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .search-input {
+      display: none;
+      margin-top: 10px;
+    }
+
+    .search-container:focus-within .search-input {
+      display: block;
+    }
+
+    .search-input input {
+      padding: 8px 12px;
+      font-size: 14px;
+      border: none;
+      border-radius: 20px;
+      outline: none;
+      background-color: royalblue;
+      color: white;
+      width: 160px;
+    }
+
+    .search-input input::placeholder {
+      color: white;
+      opacity: 1;
+    }
+
+    nav {
+      background-color: #111111;
+      display: flex;
+      justify-content: center;
+      border-bottom: 1px solid white;
+    }
+
+    nav a {
+      color: white;
+      font-family: 'Archivo Black', sans-serif;
+      text-decoration: none;
+      padding: 15px 20px;
+      font-size: 14px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #d3d3d3;
+      color: #111111;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/beatflix-playlists.png') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
+    }
+
+    .hero h2 {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 16px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    section h3 {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 22px;
+      border-bottom: 3px solid royalblue;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+      color: #111;
+    }
+
+    .playlist-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .playlist-card {
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .playlist-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+
+    .playlist-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .playlist-card .content {
+      padding: 15px;
+    }
+
+    .playlist-card h4 {
+      font-family: 'Open Sans Black', sans-serif;
+      font-size: 16px;
+      margin: 0 0 8px;
+      color: royalblue;
+    }
+
+    .playlist-card p {
+      font-size: 14px;
+      color: #444;
+    }
+
+    footer {
+      background-color: #111111;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-container">
+      <h1>BEATFLIX</h1>
+    </div>
+    <p>POR BEATRIZ</p>
+
+    <div class="search-container" tabindex="0">
+      <button class="search-button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </button>
+      <div class="search-input">
+        <input type="text" placeholder="Pesquisar...">
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <a href="index.html">INÍCIO</a>
+    <a href="sobre.html">SOBRE</a>
+    <a href="artigos.html">ARTIGOS</a>
+    <a href="videos.html">VÍDEOS</a>
+    <a href="playlists.html">PLAYLISTS</a>
+  </nav>
+
+  <div class="hero">
+    <h2>Playlistzinhas que salvam o dia</h2>
+    <p>Pra embalar o caos, embalar o coração ou só se perder nos fones. Aperta o play e vem comigo!</p>
+  </div>
+
+  <section>
+    <h3>ESCOLHAS DA SEMANA</h3>
+    <div class="playlist-grid">
+      <div class="playlist-card">
+        <img src="https://source.unsplash.com/featured/?vintage,vinyl" alt="Playlist 1">
+        <div class="content">
+          <h4>Retrô Hits</h4>
+          <p>Clássicos que fazem sua alma dançar como se fosse 1980.</p>
+        </div>
+      </div>
+      <div class="playlist-card">
+        <img src="https://source.unsplash.com/featured/?chill,music" alt="Playlist 2">
+        <div class="content">
+          <h4>Café & Chill</h4>
+          <p>Trilhas suaves pra estudar, descansar ou simplesmente existir.</p>
+        </div>
+      </div>
+      <div class="playlist-card">
+        <img src="https://source.unsplash.com/featured/?pop,concert" alt="Playlist 3">
+        <div class="content">
+          <h4>Pop Perfeição</h4>
+          <p>Hinos pop sem defeitos pra cantar no banho e na balada.</p>
+        </div>
+      </div>
+      <div class="playlist-card">
+        <img src="https://source.unsplash.com/featured/?sunset,beats" alt="Playlist 4">
+        <div class="content">
+          <h4>Pôr do Som</h4>
+          <p>Beats lo-fi e vibes de fim de tarde num pôr do sol mental.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Beatflix. Um blog feito à base de café e música. 💙</p>
+  </footer>
+
+</body>
+</html>
