@@ -3,7 +3,104 @@
 <head>
   <meta charset="UTF-8">
   <title>Sobre | Beatflix</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #f9f9f9;
+      color: #111;
+      line-height: 1.6;
+    }
+
+    /* Cabeçalho */
+    .cabecalho {
+      text-align: center;
+      background-color: #1a1a1a;
+      color: white;
+      padding: 30px 20px 20px;
+    }
+
+    .titulo-site {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 36px;
+    }
+
+    .subtitulo-site {
+      font-size: 14px;
+      margin-top: 5px;
+      letter-spacing: 2px;
+    }
+
+    .menu ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .menu li a {
+      text-decoration: none;
+      color: white;
+      padding: 8px 12px;
+      transition: background 0.3s;
+      font-weight: bold;
+    }
+
+    .menu li a:hover,
+    .menu li a.ativo {
+      background-color: #e0e0e0;
+      color: #111;
+      border-radius: 5px;
+    }
+
+    /* Imagem de destaque */
+    .imagem-destaque {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      max-height: 400px;
+    }
+
+    /* Seções */
+    .secao {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    /* Título com linha azul longa */
+    .linha-titulo {
+      border-bottom: 4px solid royalblue;
+      text-align: center;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .titulo-secao {
+      font-family: 'Open Sans Black', sans-serif;
+      font-size: 24px;
+      color: #111;
+      display: inline-block;
+      background-color: #f9f9f9;
+      padding: 0 15px;
+      position: relative;
+      top: 12px;
+    }
+
+    /* Texto */
+    .secao p {
+      margin-bottom: 20px;
+    }
+  </style>
 </head>
 <body>
 
