@@ -1,148 +1,205 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Sobre | Beatflix</title>
-  <style>
-    /* Reset básico */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SFSQRTN33K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-SFSQRTN33K');
+</script>
+  
+  <meta charset="UTF-8">
+  <title>Sobre | BEATFLIX</title>
+  <link rel="icon" type="image/png" href="images/beatflix-logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Open+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+  <style>
     body {
+      margin: 0;
       font-family: 'Open Sans', sans-serif;
       background-color: #f9f9f9;
-      color: #111;
-      line-height: 1.6;
+      color: #333;
     }
 
-    /* Cabeçalho */
-    .cabecalho {
-      text-align: center;
-      background-color: #1a1a1a;
+    header {
+      background-color: #111111;
       color: white;
-      padding: 30px 20px 20px;
+      text-align: center;
+      padding: 30px 10px 10px;
+      position: relative;
     }
 
-    .titulo-site {
-      font-family: 'Archivo Black', sans-serif;
-      font-size: 36px;
-    }
-
-    .subtitulo-site {
-      font-size: 14px;
-      margin-top: 5px;
-      letter-spacing: 2px;
-    }
-
-    .menu ul {
-      list-style: none;
+    .logo-container {
       display: flex;
       justify-content: center;
-      margin-top: 20px;
-      flex-wrap: wrap;
-      gap: 20px;
+      align-items: center;
+      gap: 15px;
     }
 
-    .menu li a {
-      text-decoration: none;
-      color: white;
-      padding: 8px 12px;
-      transition: background 0.3s;
-      font-weight: bold;
+    .logo-container h1 {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 60px;
+      margin: 0;
     }
 
-    .menu li a:hover,
-    .menu li a.ativo {
-      background-color: #e0e0e0;
-      color: #111;
-      border-radius: 5px;
+    header p {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 16px;
+      letter-spacing: 1px;
+      margin: 0px 0 20px;
     }
 
-    /* Imagem de destaque */
-    .imagem-destaque {
-      width: 100%;
-      height: auto;
+    .search-container {
+      position: absolute;
+      top: 30px;
+      right: 20px;
+    }
+
+    .search-button {
+      width: 40px;
+      height: 40px;
+      background-color: royalblue;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+
+    .search-button svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .search-input {
+      display: none;
+      margin-top: 10px;
+    }
+
+    .search-container:focus-within .search-input {
       display: block;
-      object-fit: cover;
-      max-height: 400px;
     }
 
-    /* Seções */
-    .secao {
+    .search-input input {
+      padding: 8px 12px;
+      font-size: 14px;
+      border: none;
+      border-radius: 20px;
+      outline: none;
+      background-color: royalblue;
+      color: white;
+      width: 160px;
+    }
+
+    .search-input input::placeholder {
+      color: white;
+      opacity: 1;
+    }
+
+    nav {
+      background-color: #111111;
+      display: flex;
+      justify-content: center;
+      border-bottom: 1px solid white;
+    }
+
+    nav a {
+      color: white;
+      font-family: 'Archivo Black', sans-serif;
+      text-decoration: none;
+      padding: 15px 20px;
+      font-size: 14px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #d3d3d3;
+      color: #111111;
+    }
+
+    main.sobre {
       max-width: 900px;
       margin: 40px auto;
       padding: 0 20px;
-    }
-
-    /* Título com linha azul longa */
-    .linha-titulo {
-      border-bottom: 4px solid royalblue;
       text-align: center;
-      margin-bottom: 20px;
-      position: relative;
     }
 
-    .titulo-secao {
-      font-family: 'Open Sans Black', sans-serif;
-      font-size: 24px;
-      color: #111;
-      display: inline-block;
-      background-color: #f9f9f9;
-      padding: 0 15px;
-      position: relative;
-      top: 12px;
+    .sobre-img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 30px;
     }
 
-    /* Texto */
-    .secao p {
+    main.sobre h2 {
+      font-family: 'Archivo Black', sans-serif;
+      font-size: 32px;
+      color: royalblue;
       margin-bottom: 20px;
+    }
+
+    main.sobre p {
+      font-size: 17px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    footer {
+      background-color: #111111;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 14px;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Cabeçalho -->
-  <header class="cabecalho">
-    <h1 class="titulo-site">BEATFLIX</h1>
-    <p class="subtitulo-site">BY BEATRIZ</p>
-    <nav class="menu">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="sobre.html" class="ativo">Sobre</a></li>
-        <li><a href="artigos.html">Blog</a></li>
-        <li><a href="#">Vídeos</a></li>
-        <li><a href="#">Playlists</a></li>
-      </ul>
-    </nav>
+  <header>
+    <div class="logo-container">
+      <h1>BEATFLIX</h1>
+    </div>
+    <p>POR BEATRIZ</p>
+
+    <div class="search-container" tabindex="0">
+      <button class="search-button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </button>
+      <div class="search-input">
+        <input type="text" placeholder="Pesquisar...">
+      </div>
+    </div>
   </header>
 
-  <!-- Seção de destaque com imagem cheia -->
-  <section class="destaque">
-    <img src="img/beatflix-sobre.jpg" alt="Imagem de destaque da página Sobre" class="imagem-destaque">
-  </section>
+  <nav>
+    <a href="index.html">INÍCIO</a>
+    <a href="sobre.html">SOBRE</a>
+    <a href="artigos.html">ARTIGOS</a>
+    <a href="videos.html">VÍDEOS</a>
+    <a href="playlists.html">PLAYLISTS</a>
+  </nav>
 
-  <!-- Título com linha azul longa -->
-  <section class="secao">
-    <div class="linha-titulo">
-      <h2 class="titulo-secao">Sobre o Beatflix</h2>
-    </div>
-  </section>
+  <main class="sobre">
+    <img src="images/beatflix-sobre.png" alt="Ilustração do Beatflix com café e fones de ouvido" class="sobre-img">
+    <h2>Sobre o Beatflix</h2>
+    <p>O Beatflix nasceu da vontade de compartilhar curiosidades, listas e resenhas com uma pitada de música e personalidade. Aqui, você vai encontrar desde dicas para maratonar no fim de semana até reflexões sobre filmes, trilhas sonoras e cultura pop.</p>
+    <p>Por trás da tela, quem escreve é Beatriz — publicitária em formação, amante de playlists, histórias bem contadas e boas conversas. Esse é um espaço leve e criativo, feito pra gente que ama descobrir coisas novas e conversar sobre o que sente.</p>
+    <p>O Beatflix é todinho seu agora. Puxa uma cadeira e dá o play! 💙</p>
+  </main>
 
-  <!-- Conteúdo textual da seção Sobre -->
-  <section class="secao">
-    <p>
-O Beatflix nasceu da vontade de compartilhar curiosidades, listas e resenhas com uma pitada de música e personalidade. Aqui, você vai encontrar desde dicas para maratonar no fim de semana até reflexões sobre filmes, trilhas sonoras e cultura pop.
-    </p>
-    <p>
-Por trás da tela, quem escreve é Beatriz — publicitária em formação, amante de playlists, histórias bem contadas e boas conversas. Esse é um espaço leve e criativo, feito pra gente que ama descobrir coisas novas e conversar sobre o que sente.
-    </p>
-    <p>
-O Beatflix é todinho seu agora. Puxa uma cadeira e dá o play! 💙
-    </p>
-  </section>
+  <footer>
+    <p>&copy; 2025 Beatflix. Um blog feito à base de café e música. 💙</p>
+  </footer>
 
 </body>
 </html>
